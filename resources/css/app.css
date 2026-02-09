@@ -1,0 +1,474 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* ============================================
+   PureDropCleaning Theme Configuration
+   ============================================ */
+
+@theme {
+    /* Brand Colors - Extracted from Logo */
+    --color-primary: #1e4b8e;
+    --color-primary-dark: #0d2d5a;
+    --color-primary-light: #2563eb;
+    --color-accent: #f7a400;
+    --color-accent-dark: #d48900;
+    --color-accent-light: #fbbf24;
+    --color-sky: #4aa8d8;
+    --color-sky-light: #7dd3fc;
+
+    /* Neutral Colors */
+    --color-dark: #1a1a2e;
+    --color-gray-dark: #374151;
+    --color-gray: #6b7280;
+    --color-gray-light: #9ca3af;
+    --color-light: #f8fafc;
+    --color-white: #ffffff;
+
+    /* Typography */
+    --font-heading: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Open Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-card-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-button: 0 4px 14px 0 rgba(30, 75, 142, 0.39);
+
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition-fast: 150ms;
+    --transition-normal: 300ms;
+    --transition-slow: 500ms;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* ============================================
+   Component Utilities
+   ============================================ */
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal) ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: var(--color-white);
+    box-shadow: var(--shadow-button);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 0 rgba(30, 75, 142, 0.5);
+}
+
+.btn-accent {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    color: var(--color-dark);
+    box-shadow: 0 4px 14px 0 rgba(247, 164, 0, 0.39);
+}
+
+.btn-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 0 rgba(247, 164, 0, 0.5);
+}
+
+.btn-outline {
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Cards */
+.card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    transition: all var(--transition-normal) ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+/* Service Card Icon */
+.service-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: linear-gradient(135deg, var(--color-sky-light) 0%, var(--color-sky) 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+/* Section Styling */
+.section {
+    padding: 4rem 1rem;
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 5rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section {
+        padding: 6rem 2rem;
+    }
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-gray);
+    max-width: 600px;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-sky) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(30, 75, 142, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(30, 75, 142, 0.5);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Stagger animations */
+.animate-delay-100 {
+    animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+    animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+    animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+    animation-delay: 400ms;
+}
+
+/* ============================================
+   Content HTML Styles (for dynamic content)
+   ============================================ */
+
+.content-html {
+    color: var(--color-gray-dark);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+    .content-html {
+        font-size: 1.0625rem;
+        line-height: 1.85;
+    }
+}
+
+/* Headings */
+.content-html h1,
+.content-html h2,
+.content-html h3,
+.content-html h4,
+.content-html h5,
+.content-html h6 {
+    color: var(--color-dark);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    line-height: 1.3;
+}
+
+.content-html h1 {
+    font-size: 2rem;
+}
+
+.content-html h2 {
+    font-size: 1.75rem;
+}
+
+.content-html h3 {
+    font-size: 1.375rem;
+}
+
+.content-html h4 {
+    font-size: 1.125rem;
+}
+
+.content-html h5 {
+    font-size: 1rem;
+}
+
+.content-html h6 {
+    font-size: 0.875rem;
+}
+
+.content-html h1:first-child,
+.content-html h2:first-child,
+.content-html h3:first-child,
+.content-html h4:first-child {
+    margin-top: 0;
+}
+
+/* Paragraphs */
+.content-html p {
+    margin-bottom: 1.25em;
+    color: var(--color-gray-dark);
+}
+
+.content-html p:last-child {
+    margin-bottom: 0;
+}
+
+/* Links */
+.content-html a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast) ease;
+}
+
+.content-html a:hover {
+    color: var(--color-primary-light);
+    text-decoration: underline;
+}
+
+/* Lists */
+.content-html ul,
+.content-html ol {
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    padding-left: 1.75em;
+}
+
+.content-html ul {
+    list-style-type: disc;
+}
+
+.content-html ol {
+    list-style-type: decimal;
+}
+
+.content-html li {
+    margin-bottom: 0.5em;
+    padding-left: 0.25em;
+    color: var(--color-gray-dark);
+    line-height: 1.7;
+}
+
+.content-html li::marker {
+    color: var(--color-primary);
+}
+
+.content-html ul ul,
+.content-html ol ol,
+.content-html ul ol,
+.content-html ol ul {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Strong/Bold */
+.content-html strong,
+.content-html b {
+    color: var(--color-dark);
+    font-weight: 600;
+}
+
+/* Italic/Emphasis */
+.content-html em,
+.content-html i {
+    font-style: italic;
+}
+
+/* Blockquotes */
+.content-html blockquote {
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    border-left: 4px solid var(--color-primary);
+    background-color: var(--color-light);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-style: italic;
+    color: var(--color-gray-dark);
+}
+
+.content-html blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Horizontal Rule */
+.content-html hr {
+    margin: 2em 0;
+    border: none;
+    border-top: 2px solid var(--color-light);
+}
+
+/* Tables */
+.content-html table {
+    width: 100%;
+    margin: 1.5em 0;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+}
+
+.content-html th,
+.content-html td {
+    padding: 0.75em 1em;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.content-html th {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    font-weight: 600;
+}
+
+.content-html tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Code */
+.content-html code {
+    background-color: var(--color-light);
+    padding: 0.125em 0.375em;
+    border-radius: var(--radius-sm);
+    font-size: 0.875em;
+    color: var(--color-primary-dark);
+}
+
+.content-html pre {
+    margin: 1.5em 0;
+    padding: 1em;
+    overflow-x: auto;
+    background-color: var(--color-dark);
+    border-radius: var(--radius-md);
+}
+
+.content-html pre code {
+    background: transparent;
+    color: var(--color-light);
+    padding: 0;
+}
+
+/* Images */
+.content-html img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    margin: 1.5em 0;
+}

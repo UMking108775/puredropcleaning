@@ -1,0 +1,20 @@
+SERVICE IMAGE PROMPTS FOR PUREDROPCLEANING
+============================================
+Save all images in: public/services/
+Format: Square 1024x1024, PNG
+
+Prompt 1 Professional realistic photo of a clean modern living room interior with sparkling surfaces. Bright, airy space with sunlight. White background setting. High quality, clean aesthetic, no text, no watermarks, no labels, square format 1:1.
+
+Prompt 2 Professional realistic photo of a spotless modern kitchen with gleaming countertops and stainless steel appliances. Bright and clean. White background setting. High quality, clean aesthetic, no text, no watermarks, no labels, square format 1:1.
+
+Prompt 3 Professional realistic photo of a pristine white bathroom with sparkling tiles, clean toilet and sink. Fresh and sanitized look. White background setting. High quality, clean aesthetic, no text, no watermarks, no labels, square format 1:1.
+
+Prompt 4 Professional realistic photo of a tidy bedroom with perfectly made bed and dust-free surfaces. Peaceful and clean. White background setting. High quality, clean aesthetic, no text, no watermarks, no labels, square format 1:1.
+
+Prompt 5 Professional realistic photo of a clean, fresh-looking fabric sofa. Spotless upholstery with no stains. White background setting. High quality, clean aesthetic, no text, no watermarks, no labels, square format 1:1.
+
+Prompt 6 Professional realistic photo of crystal clear glass windows letting in bright sunlight. Streak-free, perfectly clean. White background setting. High quality, clean aesthetic, no text, no watermarks, no labels, square format 1:1.
+
+Prompt 7 Professional realistic photo of sparkling clean hardwood floor with a modern mop nearby. Dust-free surfaces. White background setting. High quality, clean aesthetic, no text, no watermarks, no labels, square format 1:1.
+
+Prompt 8 Professional realistic photo of a modern vacuum cleaner on clean carpet. Fresh and dust-free. White background setting. High quality, clean aesthetic, no text, no watermarks, no labels, square format 1:1.
