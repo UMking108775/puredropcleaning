@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'About Us - PureDropCleaning')
+@section('title', ($page->title ?? 'About Us') . ' - PureDropCleaning')
 
 @section('content')
 <!-- Page Header -->
 <section class="bg-gradient-to-br from-primary to-primary-dark py-10 sm:py-14 md:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">About PureDropCleaning</h1>
-        <p class="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto">Discover our story, mission, and the dedicated team behind your spotless spaces.</p>
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">{{ $page->title ?? 'About PureDropCleaning' }}</h1>
+        <p class="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto">{{ $page->meta_description ?? 'Discover our story, mission, and the dedicated team behind your spotless spaces.' }}</p>
         <nav class="mt-4 sm:mt-6">
             <ol class="flex items-center justify-center space-x-2 text-white/60 text-sm">
                 <li><a href="{{ route('home') }}" class="hover:text-white transition-colors">Home</a></li>
@@ -18,6 +18,17 @@
     </div>
 </section>
 
+@if($page && $page->content)
+<!-- Dynamic Content from Admin -->
+<section class="py-12 sm:py-16 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="content-html">
+            {!! $page->content !!}
+        </div>
+    </div>
+</section>
+@else
+<!-- Default Hardcoded Content -->
 <!-- Our Story -->
 <section class="py-12 sm:py-16 lg:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,6 +88,7 @@
         </div>
     </div>
 </section>
+@endif
 
 <!-- Stats -->
 <section class="py-10 sm:py-12 lg:py-16 bg-gradient-to-r from-primary via-primary-dark to-dark">

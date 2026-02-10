@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\QuoteRequestController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\ContactController;
 
 // Home Page
@@ -32,7 +33,8 @@ Route::get('/service/{slug}', function ($slug) {
 
 // About Page
 Route::get('/about', function () {
-    return view('about');
+    $page = Page::where('slug', 'about-us')->orWhere('slug', 'about')->where('is_active', true)->first();
+    return view('about', compact('page'));
 })->name('about');
 
 // Contact Page
@@ -78,5 +80,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/settings/mailer', [SettingsController::class, 'mailer'])->name('settings.mailer');
         Route::post('/settings/mailer', [SettingsController::class, 'updateMailer'])->name('settings.mailer.update');
         Route::post('/settings/mailer/test', [SettingsController::class, 'testMailer'])->name('settings.mailer.test');
+
+        // Sections (editable homepage sections)
+        Route::get('/sections/why-choose-us', [SectionController::class, 'whyChooseUs'])->name('sections.why-choose-us');
+        Route::put('/sections/why-choose-us', [SectionController::class, 'updateWhyChooseUs'])->name('sections.why-choose-us.update');
     });
 });

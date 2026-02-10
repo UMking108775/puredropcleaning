@@ -59,6 +59,16 @@
             </a>
             
             <div class="pt-4 mt-4 border-t border-white/10">
+                <p class="px-4 mb-2 text-xs uppercase tracking-wider text-gray-500">Sections</p>
+                <a href="{{ route('admin.sections.why-choose-us') }}" class="flex items-center px-4 py-3 rounded-lg hover:bg-white/10 transition-colors {{ request()->routeIs('admin.sections.*') ? 'bg-primary text-white' : 'text-gray-300' }}">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                    </svg>
+                    Why Choose Us
+                </a>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-white/10">
                 <p class="px-4 mb-2 text-xs uppercase tracking-wider text-gray-500">Settings</p>
                 <a href="{{ route('admin.settings.mailer') }}" class="flex items-center px-4 py-3 rounded-lg hover:bg-white/10 transition-colors {{ request()->routeIs('admin.settings.mailer*') ? 'bg-primary text-white' : 'text-gray-300' }}">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,5 +137,6 @@
             @yield('content')
         </main>
     </div>
+    @stack('scripts')
 </body>
 </html>

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us - PureDropCleaning')
+@section('title', App\Models\Setting::get('contact_page_title', 'Contact Us') . ' - PureDropCleaning')
 
 @section('content')
 <!-- Page Header -->
 <section class="bg-gradient-to-br from-primary to-primary-dark py-10 sm:py-14 md:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">Contact Us</h1>
-        <p class="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto">Get in touch for a free quote or any questions about our services.</p>
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">{{ App\Models\Setting::get('contact_page_title', 'Contact Us') }}</h1>
+        <p class="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto">{{ App\Models\Setting::get('contact_page_subtitle', 'Get in touch for a free quote or any questions about our services.') }}</p>
         <nav class="mt-4 sm:mt-6">
             <ol class="flex items-center justify-center space-x-2 text-white/60 text-sm">
                 <li><a href="{{ route('home') }}" class="hover:text-white transition-colors">Home</a></li>
@@ -73,6 +73,34 @@
                             class="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm border border-gray-light rounded-lg sm:rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-colors resize-none"
                             placeholder="Tell us about your cleaning needs...">{{ old('message') }}</textarea>
                         @error('message')
+                            <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <!-- Captcha -->
+                    <div>
+                        <label class="block text-xs sm:text-sm font-medium text-dark mb-1.5 sm:mb-2">Security Check *</label>
+                        <div class="bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-200 rounded-xl p-3 sm:p-4">
+                            <div class="flex items-center gap-3">
+                                <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-gray-100">
+                                    <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                    </svg>
+                                    <span class="text-sm font-semibold text-dark" id="captcha-question">Loading...</span>
+                                </div>
+                                <span class="text-gray text-sm">=</span>
+                                <input type="number" id="captcha_answer" name="captcha_answer" required
+                                    class="w-20 px-3 py-2 text-sm text-center font-semibold border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                                    placeholder="?">
+                                <input type="hidden" id="captcha_hash" name="captcha_hash">
+                                <button type="button" onclick="generateCaptcha()" class="p-2 text-gray hover:text-primary transition-colors" title="New question">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="text-[10px] sm:text-xs text-gray mt-2">Solve the math problem to verify you're human</p>
+                        </div>
+                        @error('captcha_answer')
                             <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
@@ -147,3 +175,28 @@
     </div>
 </section>
 @endsection
+
+@push('scripts')
+<script>
+    function simpleHash(str) {
+        var hash = 0;
+        for (var i = 0; i < str.length; i++) {
+            var char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash;
+        }
+        return Math.abs(hash).toString();
+    }
+
+    function generateCaptcha() {
+        var a = Math.floor(Math.random() * 15) + 1;
+        var b = Math.floor(Math.random() * 15) + 1;
+        var answer = a + b;
+        document.getElementById('captcha-question').textContent = a + ' + ' + b;
+        document.getElementById('captcha_hash').value = simpleHash('captcha_' + answer + '_puredrop');
+        document.getElementById('captcha_answer').value = '';
+    }
+
+    generateCaptcha();
+</script>
+@endpush

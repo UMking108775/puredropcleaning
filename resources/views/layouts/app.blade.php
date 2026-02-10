@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="PureDropCleaning - Professional building cleaning services. We provide top-quality home, kitchen, bathroom, and office cleaning solutions.">
+    <meta name="description" content="{{ App\Models\Setting::get('site_description', 'PureDropCleaning - Professional building cleaning services. We provide top-quality home, kitchen, bathroom, and office cleaning solutions.') }}">
     <meta name="keywords" content="cleaning services, home cleaning, office cleaning, professional cleaners">
     
     <title>@yield('title', 'PureDropCleaning - Professional Cleaning Services')</title>

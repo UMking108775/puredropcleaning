@@ -125,9 +125,16 @@
                 <p class="text-gray-light text-xs sm:text-sm text-center sm:text-left">
                     &copy; {{ date('Y') }} PureDropCleaning. All rights reserved.
                 </p>
-                <div class="flex items-center space-x-4 sm:space-x-6 text-xs sm:text-sm">
+                <div class="flex items-center flex-wrap gap-x-4 gap-y-1 sm:gap-x-6 text-xs sm:text-sm">
                     <a href="{{ route('page.show', 'privacy-policy') }}" class="text-gray-light hover:text-accent transition-colors">Privacy Policy</a>
                     <a href="{{ route('page.show', 'terms-of-service') }}" class="text-gray-light hover:text-accent transition-colors">Terms of Service</a>
+                    @if(isset($footerPages) && $footerPages->count() > 0)
+                        @foreach($footerPages as $footerPage)
+                            @if(!in_array($footerPage->slug, ['privacy-policy', 'terms-of-service']))
+                            <a href="{{ route('page.show', $footerPage->slug) }}" class="text-gray-light hover:text-accent transition-colors">{{ $footerPage->title }}</a>
+                            @endif
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>

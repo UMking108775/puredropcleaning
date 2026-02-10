@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'PureDropCleaning - Professional Building Cleaning Services')
+@section('title', App\Models\Setting::get('site_title', 'PureDropCleaning - Professional Building Cleaning Services'))
 
 @section('content')
 <!-- Hero Section -->
@@ -14,18 +14,18 @@
         <div class="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             <div class="text-center lg:text-left order-2 lg:order-1">
                 <span class="inline-block px-3 py-1 bg-accent/20 text-accent rounded-full text-xs font-semibold mb-3 sm:mb-4">
-                    ✨ Professional Cleaning Services
+                    ✨ {{ App\Models\Setting::get('hero_badge', 'Professional Cleaning Services') }}
                 </span>
                 <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-3 sm:mb-5">
-                    Spotless Spaces, <span class="text-accent">Happy Faces</span>
+                    {!! App\Models\Setting::get('hero_heading', 'Spotless Spaces, <span class="text-accent">Happy Faces</span>') !!}
                 </h1>
                 <p class="text-sm sm:text-base md:text-lg text-white/80 mb-5 sm:mb-6 max-w-xl mx-auto lg:mx-0">
-                    Experience the difference with PureDropCleaning. We transform your spaces into pristine environments using eco-friendly products.
+                    {{ App\Models\Setting::get('hero_subtitle', 'Experience the difference with PureDropCleaning. We transform your spaces into pristine environments using eco-friendly products.') }}
                 </p>
                 <!-- Buttons - Always in row -->
                 <div class="flex flex-row gap-2 sm:gap-3 justify-center lg:justify-start">
                     <a href="{{ route('contact') }}" class="btn btn-accent text-xs sm:text-sm md:text-base px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3">Get Free Quote</a>
-                    <a href="{{ route('services') }}" class="btn btn-outline border-white text-white hover:bg-white hover:text-primary text-xs sm:text-sm md:text-base px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3">Our Services</a>
+                    <a href="{{ route('services') }}" class="btn bg-white text-primary border-2 border-white hover:bg-primary hover:text-white hover:border-primary hover:shadow-lg hover:shadow-primary/30 text-xs sm:text-sm md:text-base px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 transition-all duration-300">Our Services</a>
                 </div>
                 <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-5 mt-5 sm:mt-8">
                     <div class="flex items-center text-white/80">

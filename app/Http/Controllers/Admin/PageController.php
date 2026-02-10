@@ -27,9 +27,13 @@ class PageController extends Controller
             'meta_description' => 'nullable|string|max:500',
             'content' => 'required|string',
             'is_active' => 'boolean',
+            'show_in_header' => 'boolean',
+            'show_in_footer' => 'boolean',
         ]);
 
         $validated['is_active'] = $request->has('is_active');
+        $validated['show_in_header'] = $request->has('show_in_header');
+        $validated['show_in_footer'] = $request->has('show_in_footer');
 
         Page::create($validated);
 
@@ -50,9 +54,13 @@ class PageController extends Controller
             'meta_description' => 'nullable|string|max:500',
             'content' => 'required|string',
             'is_active' => 'boolean',
+            'show_in_header' => 'boolean',
+            'show_in_footer' => 'boolean',
         ]);
 
         $validated['is_active'] = $request->has('is_active');
+        $validated['show_in_header'] = $request->has('show_in_header');
+        $validated['show_in_footer'] = $request->has('show_in_footer');
 
         $page->update($validated);
 

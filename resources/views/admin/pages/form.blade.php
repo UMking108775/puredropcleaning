@@ -203,6 +203,32 @@ $preset = isset($presets[$template]) ? $presets[$template] : null;
                     @enderror
                 </div>
 
+                <!-- Display Location -->
+                <div class="bg-gray-50 rounded-xl p-4 sm:p-5">
+                    <label class="block text-sm font-medium text-dark mb-3">Display Location</label>
+                    <p class="text-xs text-gray mb-4">Choose where this page link should appear on the website</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="show_in_header" name="show_in_header" value="1"
+                                class="w-5 h-5 text-primary border-gray-light rounded focus:ring-primary"
+                                {{ old('show_in_header', $page->show_in_header ?? false) ? 'checked' : '' }}>
+                            <label for="show_in_header" class="ml-3 text-sm text-dark">
+                                <span class="font-medium">Show in Header Navigation</span>
+                                <span class="block text-xs text-gray mt-0.5">Page will appear in the main navigation bar</span>
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="show_in_footer" name="show_in_footer" value="1"
+                                class="w-5 h-5 text-primary border-gray-light rounded focus:ring-primary"
+                                {{ old('show_in_footer', $page->show_in_footer ?? false) ? 'checked' : '' }}>
+                            <label for="show_in_footer" class="ml-3 text-sm text-dark">
+                                <span class="font-medium">Show in Footer (Legal Pages)</span>
+                                <span class="block text-xs text-gray mt-0.5">Page will appear in the footer bottom bar alongside Privacy Policy & Terms</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Active Status -->
                 <div class="flex items-center">
                     <input type="checkbox" id="is_active" name="is_active" value="1"

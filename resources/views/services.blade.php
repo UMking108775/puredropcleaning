@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Our Services - PureDropCleaning')
+@section('title', App\Models\Setting::get('services_page_title', 'Our Services') . ' - PureDropCleaning')
 
 @section('content')
 <!-- Page Header -->
 <section class="bg-gradient-to-br from-primary to-primary-dark py-10 sm:py-14 md:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">Our Cleaning Services</h1>
-        <p class="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto">Professional cleaning solutions tailored to your needs. From homes to offices, we make every space sparkle.</p>
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">{{ App\Models\Setting::get('services_page_title', 'Our Cleaning Services') }}</h1>
+        <p class="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto">{{ App\Models\Setting::get('services_page_subtitle', 'Professional cleaning solutions tailored to your needs. From homes to offices, we make every space sparkle.') }}</p>
         <nav class="mt-4 sm:mt-6">
             <ol class="flex items-center justify-center space-x-2 text-white/60 text-sm">
                 <li><a href="{{ route('home') }}" class="hover:text-white transition-colors">Home</a></li>
