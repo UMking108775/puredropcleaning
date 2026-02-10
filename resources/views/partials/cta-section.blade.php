@@ -5,7 +5,7 @@
             <!-- Left Side - Logo -->
             <div class="text-center md:text-left">
                 <a href="{{ route('home') }}" class="inline-block">
-                    <img src="{{ asset('logo2.png') }}" alt="PureDropCleaning" class="h-32 sm:h-44 lg:h-64 w-auto mx-auto md:mx-0">
+                    <img src="{{ asset('logo2.png') }}" alt="PureDropCleaning" class="h-32 sm:h-40 lg:h-48 w-auto mx-auto md:mx-0">
                 </a>
             </div>
             
