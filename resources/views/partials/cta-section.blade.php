@@ -5,7 +5,11 @@
             <!-- Left Side - Logo -->
             <div class="text-center md:text-left">
                 <a href="{{ route('home') }}" class="inline-block">
-                    <img src="{{ asset('logo2.png') }}" alt="PureDropCleaning" class="h-32 sm:h-40 lg:h-48 w-auto mx-auto md:mx-0">
+                    @if(\App\Models\Setting::get('brand_logo'))
+                        <img src="{{ asset(\App\Models\Setting::get('brand_logo')) }}" alt="{{ \App\Models\Setting::get('brand_name', 'PureDropCleaning') }}" class="h-32 sm:h-40 lg:h-48 w-auto mx-auto md:mx-0">
+                    @else
+                        <img src="{{ asset('logo2.png') }}" alt="PureDropCleaning" class="h-32 sm:h-40 lg:h-48 w-auto mx-auto md:mx-0">
+                    @endif
                 </a>
             </div>
             
@@ -16,11 +20,11 @@
                 <div class="space-y-3 sm:space-y-4 mb-5 sm:mb-8">
                     <div>
                         <span class="text-xs sm:text-sm font-semibold text-primary">Working Hours</span>
-                        <p class="text-gray text-xs sm:text-sm">8:00 am to 9:00 pm</p>
+                        <p class="text-gray text-xs sm:text-sm">{{ \App\Models\Setting::get('brand_hours', '8:00 am to 9:00 pm') }}</p>
                     </div>
                     <div>
                         <span class="text-xs sm:text-sm font-semibold text-primary">Address</span>
-                        <p class="text-gray text-xs sm:text-sm">Al Jafiliya, Dubai, United Arab Emirates</p>
+                        <p class="text-gray text-xs sm:text-sm">{!! nl2br(\App\Models\Setting::get('brand_address', 'Al Jafiliya, Dubai, United Arab Emirates')) !!}</p>
                     </div>
                     <div>
                         <span class="text-xs sm:text-sm font-semibold text-primary">Call Us</span>
@@ -29,10 +33,10 @@
                 
                 <!-- Phone Buttons -->
                 <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
-                    <a href="tel:+971551018837" class="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-primary text-white font-semibold rounded-full text-sm sm:text-base hover:bg-primary-dark transition-colors">
-                        +971 55 101 8837
+                    <a href="tel:{{ \App\Models\Setting::get('brand_phone', '+971 55 101 8837') }}" class="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-primary text-white font-semibold rounded-full text-sm sm:text-base hover:bg-primary-dark transition-colors">
+                        {{ \App\Models\Setting::get('brand_phone', '+971 55 101 8837') }}
                     </a>
-                    <a href="mailto:info.puredropcleaning@gmail.com" class="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-accent text-dark font-semibold rounded-full text-sm sm:text-base hover:bg-accent/80 transition-colors">
+                    <a href="mailto:{{ \App\Models\Setting::get('brand_email', 'info.puredropcleaning@gmail.com') }}" class="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-accent text-dark font-semibold rounded-full text-sm sm:text-base hover:bg-accent/80 transition-colors">
                         Email Us
                     </a>
                 </div>

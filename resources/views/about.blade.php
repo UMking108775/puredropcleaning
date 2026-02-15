@@ -94,22 +94,16 @@
 <section class="py-10 sm:py-12 lg:py-16 bg-gradient-to-r from-primary via-primary-dark to-dark">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+            @for($i = 1; $i <= 4; $i++)
             <div>
-                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-1">10+</div>
-                <div class="text-white/80 text-xs sm:text-sm">Years Experience</div>
+                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-1">
+                    {{ App\Models\Setting::get('wcu_stat'.$i.'_value', ['10+', '5000+', '15+', '98%'][$i-1]) }}
+                </div>
+                <div class="text-white/80 text-xs sm:text-sm">
+                    {{ App\Models\Setting::get('wcu_stat'.$i.'_label', ['Years Experience', 'Happy Clients', 'Expert Cleaners', 'Satisfaction Rate'][$i-1]) }}
+                </div>
             </div>
-            <div>
-                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-1">5000+</div>
-                <div class="text-white/80 text-xs sm:text-sm">Happy Clients</div>
-            </div>
-            <div>
-                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-1">15+</div>
-                <div class="text-white/80 text-xs sm:text-sm">Expert Cleaners</div>
-            </div>
-            <div>
-                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-1">98%</div>
-                <div class="text-white/80 text-xs sm:text-sm">Satisfaction Rate</div>
-            </div>
+            @endfor
         </div>
     </div>
 </section>

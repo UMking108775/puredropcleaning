@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\QuoteRequestController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\SectionController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\ContactController;
 
 // Home Page
@@ -76,10 +77,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::patch('/quotes/{quote}/close', [QuoteRequestController::class, 'close'])->name('quotes.close');
         Route::delete('/quotes/{quote}', [QuoteRequestController::class, 'destroy'])->name('quotes.destroy');
 
+
         // Settings
         Route::get('/settings/mailer', [SettingsController::class, 'mailer'])->name('settings.mailer');
         Route::post('/settings/mailer', [SettingsController::class, 'updateMailer'])->name('settings.mailer.update');
         Route::post('/settings/mailer/test', [SettingsController::class, 'testMailer'])->name('settings.mailer.test');
+        Route::get('/settings/brand', [SettingsController::class, 'brand'])->name('settings.brand');
+        Route::post('/settings/brand', [SettingsController::class, 'updateBrand'])->name('settings.brand.update');
+
+        // Profile Routes
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
         // Sections (editable homepage sections)
         Route::get('/sections/why-choose-us', [SectionController::class, 'whyChooseUs'])->name('sections.why-choose-us');

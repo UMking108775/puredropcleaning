@@ -70,6 +70,12 @@
 
             <div class="pt-4 mt-4 border-t border-white/10">
                 <p class="px-4 mb-2 text-xs uppercase tracking-wider text-gray-500">Settings</p>
+                <a href="{{ route('admin.settings.brand') }}" class="flex items-center px-4 py-3 rounded-lg hover:bg-white/10 transition-colors {{ request()->routeIs('admin.settings.brand') ? 'bg-primary text-white' : 'text-gray-300' }}">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                    </svg>
+                    Brand Customization
+                </a>
                 <a href="{{ route('admin.settings.mailer') }}" class="flex items-center px-4 py-3 rounded-lg hover:bg-white/10 transition-colors {{ request()->routeIs('admin.settings.mailer*') ? 'bg-primary text-white' : 'text-gray-300' }}">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -102,15 +108,70 @@
                 
                 <h1 class="text-xl font-semibold text-dark">@yield('page-title', 'Dashboard')</h1>
                 
-                <div class="flex items-center space-x-4">
-                    <span class="text-sm text-gray">{{ Auth::user()->name }}</span>
-                    <form action="{{ route('admin.logout') }}" method="POST" class="inline">
-                        @csrf
-                        <button type="submit" class="text-sm text-primary hover:text-primary-dark font-medium">
-                            Logout
-                        </button>
-                    </form>
+                <div class="relative profile-dropdown-container">
+                    <button onclick="toggleProfileDropdown()" class="flex items-center space-x-3 text-dark hover:text-primary transition-colors focus:outline-none group">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center text-primary font-bold text-lg border border-primary/20 shadow-sm group-hover:shadow-md transition-all">
+                            {{ substr(Auth::user()->name, 0, 1) }}
+                        </div>
+                        <div class="hidden sm:block text-left">
+                            <span class="block font-medium text-sm leading-tight">{{ Auth::user()->name }}</span>
+                            <span class="block text-[10px] text-gray-500 leading-tight">Admin</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    
+                    <div id="profile-dropdown" class="hidden absolute right-0 mt-3 w-64 bg-white rounded-xl shadow-xl py-2 border border-gray-100 z-50 transform origin-top-right transition-all">
+                        <div class="px-5 py-4 border-b border-gray-50 bg-gray-50/50 rounded-t-xl">
+                            <p class="text-sm font-semibold text-dark">{{ Auth::user()->name }}</p>
+                            <p class="text-xs text-gray-500 truncate">{{ Auth::user()->email }}</p>
+                        </div>
+                        <div class="py-1">
+                            <a href="{{ route('admin.profile.edit') }}" class="flex items-center px-5 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">
+                                <span class="w-8 h-8 rounded-lg bg-primary/5 text-primary flex items-center justify-center mr-3">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                    </svg>
+                                </span>
+                                My Profile
+                            </a>
+                        </div>
+                        <div class="border-t border-gray-100 my-1"></div>
+                        <div class="py-1">
+                            <form action="{{ route('admin.logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="w-full text-left flex items-center px-5 py-2.5 text-sm text-red-600 hover:bg-red-50 transition-colors group">
+                                    <span class="w-8 h-8 rounded-lg bg-red-50 text-red-500 flex items-center justify-center mr-3 group-hover:bg-red-100 transition-colors">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                                        </svg>
+                                    </span>
+                                    Logout
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
+
+                <script>
+                    function toggleProfileDropdown() {
+                        const dropdown = document.getElementById('profile-dropdown');
+                        dropdown.classList.toggle('hidden');
+                    }
+
+                    // Close dropdown when clicking outside
+                    document.addEventListener('click', function(event) {
+                        const container = document.querySelector('.profile-dropdown-container');
+                        const dropdown = document.getElementById('profile-dropdown');
+                        // Check if click is outside the button and the dropdown
+                        if (container && !container.contains(event.target)) {
+                             if (dropdown && !dropdown.classList.contains('hidden')) {
+                                dropdown.classList.add('hidden');
+                             }
+                        }
+                    });
+                </script>
             </div>
         </header>
 

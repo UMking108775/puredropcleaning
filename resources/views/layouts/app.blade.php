@@ -6,10 +6,14 @@
     <meta name="description" content="{{ App\Models\Setting::get('site_description', 'PureDropCleaning - Professional building cleaning services. We provide top-quality home, kitchen, bathroom, and office cleaning solutions.') }}">
     <meta name="keywords" content="cleaning services, home cleaning, office cleaning, professional cleaners">
     
-    <title>@yield('title', 'PureDropCleaning - Professional Cleaning Services')</title>
+    <title>@yield('title', \App\Models\Setting::get('brand_name', 'PureDropCleaning') . ' - ' . \App\Models\Setting::get('meta_title_suffix', 'Professional Cleaning Services'))</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('logo.png') }}">
+    @if(\App\Models\Setting::get('brand_favicon'))
+        <link rel="icon" type="image/png" href="{{ asset(\App\Models\Setting::get('brand_favicon')) }}">
+    @else
+        <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    @endif
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

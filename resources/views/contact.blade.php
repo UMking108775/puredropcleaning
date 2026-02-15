@@ -130,7 +130,7 @@
                         </div>
                         <div>
                             <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-dark mb-0.5 sm:mb-1">Our Location</h3>
-                            <p class="text-gray text-xs sm:text-sm">Al Jafiliya, Dubai<br>United Arab Emirates</p>
+                            <p class="text-gray text-xs sm:text-sm">{!! nl2br(\App\Models\Setting::get('brand_address', "Al Jafiliya, Dubai\nUnited Arab Emirates")) !!}</p>
                         </div>
                     </div>
                     
@@ -142,7 +142,7 @@
                         </div>
                         <div>
                             <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-dark mb-0.5 sm:mb-1">Phone</h3>
-                            <a href="tel:+971551018837" class="text-primary hover:text-accent transition-colors text-sm sm:text-base">+971 55 101 8837</a>
+                            <a href="tel:{{ \App\Models\Setting::get('brand_phone', '+971 55 101 8837') }}" class="text-primary hover:text-accent transition-colors text-sm sm:text-base">{{ \App\Models\Setting::get('brand_phone', '+971 55 101 8837') }}</a>
                         </div>
                     </div>
                     
@@ -154,7 +154,7 @@
                         </div>
                         <div>
                             <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-dark mb-0.5 sm:mb-1">Email</h3>
-                            <a href="mailto:info.puredropcleaning@gmail.com" class="text-primary hover:text-accent transition-colors text-xs sm:text-sm break-all">info.puredropcleaning@gmail.com</a>
+                            <a href="mailto:{{ \App\Models\Setting::get('brand_email', 'info.puredropcleaning@gmail.com') }}" class="text-primary hover:text-accent transition-colors text-xs sm:text-sm break-all">{{ \App\Models\Setting::get('brand_email', 'info.puredropcleaning@gmail.com') }}</a>
                         </div>
                     </div>
                     
@@ -166,7 +166,7 @@
                         </div>
                         <div>
                             <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-dark mb-0.5 sm:mb-1">Working Hours</h3>
-                            <p class="text-gray text-xs sm:text-sm">Open Daily: 8:00 AM - 9:00 PM<br>Monday to Sunday</p>
+                            <p class="text-gray text-xs sm:text-sm">{!! nl2br(\App\Models\Setting::get('brand_hours', "Open Daily: 8:00 AM - 9:00 PM\nMonday to Sunday")) !!}</p>
                         </div>
                     </div>
                 </div>

@@ -89,4 +89,86 @@ class SettingsController extends Controller
                 ->with('error', 'Failed to send test email: ' . $e->getMessage());
         }
     }
+    public function brand()
+    {
+        $settings = \App\Models\Setting::getGroup('brand');
+
+        // Default values
+        $defaults = [
+            'brand_name' => 'PureDropCleaning',
+            'brand_logo' => 'logo.png', // Default path in public
+            'brand_favicon' => '',
+            'brand_address' => 'Al Jafiliya, Dubai, United Arab Emirates',
+            'brand_phone' => '+971 55 101 8837',
+            'brand_email' => 'info.puredropcleaning@gmail.com',
+            'brand_hours' => '8:00 AM - 9:00 PM (Daily)',
+            'social_facebook' => '#',
+            'social_instagram' => '#',
+            'social_tiktok' => '#',
+            'social_whatsapp' => 'https://wa.me/971551018837',
+            'meta_title_suffix' => 'Professional Cleaning Services',
+        ];
+
+        $data = array_merge($defaults, $settings);
+
+        return view('admin.settings.brand', compact('data'));
+    }
+
+    public function updateBrand(Request $request)
+    {
+        $request->validate([
+            'brand_name' => 'required|string|max:255',
+            'brand_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'brand_favicon' => 'nullable|image|mimes:ico,png,jpg,svg|max:1024',
+            'brand_address' => 'nullable|string',
+            'brand_phone' => 'nullable|string',
+            'brand_email' => 'nullable|email',
+            'brand_hours' => 'nullable|string',
+            'social_facebook' => 'nullable|string',
+            'social_instagram' => 'nullable|string',
+            'social_tiktok' => 'nullable|string',
+            'social_whatsapp' => 'nullable|string',
+            'meta_title_suffix' => 'nullable|string',
+        ]);
+
+        $fields = [
+            'brand_name', 'brand_address', 'brand_phone', 'brand_email', 'brand_hours',
+            'social_facebook', 'social_instagram', 'social_tiktok', 'social_whatsapp',
+            'meta_title_suffix'
+        ];
+
+        // Handle Text Fields
+        foreach ($fields as $field) {
+            if ($request->has($field)) {
+                \App\Models\Setting::set($field, $request->input($field), 'brand');
+            }
+        }
+
+        // Handle Logo Upload
+        if ($request->hasFile('brand_logo')) {
+            $path = $request->file('brand_logo')->store('brand', 'public');
+            // Delete old logo if exists and not default
+            $oldLogo = \App\Models\Setting::get('brand_logo');
+            if ($oldLogo && $oldLogo !== 'logo.png' && \Illuminate\Support\Facades\Storage::disk('public')->exists($oldLogo)) {
+                \Illuminate\Support\Facades\Storage::disk('public')->delete($oldLogo);
+            }
+            \App\Models\Setting::set('brand_logo', 'storage/' . $path, 'brand');
+        }
+
+        // Handle Favicon Upload
+        if ($request->hasFile('brand_favicon')) {
+            $path = $request->file('brand_favicon')->store('brand', 'public');
+            // Delete old favicon
+            $oldFavicon = \App\Models\Setting::get('brand_favicon');
+            if ($oldFavicon && \Illuminate\Support\Facades\Storage::disk('public')->exists($oldFavicon)) {
+                \Illuminate\Support\Facades\Storage::disk('public')->delete($oldFavicon);
+            }
+            \App\Models\Setting::set('brand_favicon', 'storage/' . $path, 'brand');
+        }
+
+        \App\Models\Setting::clearGroupCache('brand');
+
+        return redirect()->route('admin.settings.brand')
+            ->with('success', 'Brand settings updated successfully!');
+    }
 }
