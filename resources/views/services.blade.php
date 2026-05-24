@@ -51,7 +51,7 @@
                         @endif
                         <div class="flex flex-wrap gap-2">
                             <a href="{{ route('service.show', ['slug' => $service->slug ?? Str::slug($service->title)]) }}" class="btn btn-outline text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">More Details</a>
-                            <a href="{{ route('contact') }}?service={{ $service->id }}" class="btn btn-primary text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">Book Now</a>
+                            <a href="{{ rtrim(App\Models\Setting::get('social_whatsapp', 'https://wa.me/971551018837'), '/') }}?text={{ urlencode("Hi! I'd like to book the {$service->title} service. Please share the details.") }}" target="_blank" rel="noopener" class="btn btn-primary text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">Book Now</a>
                         </div>
                     </div>
                 </div>
