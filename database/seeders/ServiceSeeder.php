@@ -8,271 +8,274 @@ use Illuminate\Support\Str;
 
 class ServiceSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $services = [
             [
-                'title' => 'Full Home Cleaning',
-                'description' => 'Complete home cleaning service covering all rooms, including living areas, bedrooms, kitchen, and bathrooms. Our thorough approach ensures every corner of your home sparkles.',
+                'title' => 'Deep Cleaning',
+                'description' => 'Thorough top-to-bottom deep cleaning for your home or workspace. We target every corner, surface and hidden spot to deliver a hygienic, sparkling environment.',
                 'features' => [
-                    'Living room deep cleaning',
-                    'All bedrooms cleaning',
-                    'Kitchen cleaning & sanitization',
-                    'Bathroom scrubbing',
-                    'Floor mopping & vacuuming',
-                    'Dusting all surfaces',
-                    'Window sill cleaning',
-                    'Trash removal'
+                    'Top-to-bottom cleaning',
+                    'Disinfection of all surfaces',
+                    'Kitchen & bathroom deep clean',
+                    'Floor scrubbing & mopping',
+                    'Dusting of all fixtures',
+                    'Hard-to-reach areas',
+                    'Eco-friendly products',
+                    'Quality-checked finish',
                 ],
-                'full_content' => '<h3>Complete Home Transformation</h3>
-<p>Our Full Home Cleaning service is designed to give your entire home a thorough, top-to-bottom clean. Whether you need a one-time deep clean or regular maintenance, our trained professionals will leave your home spotless and fresh.</p>
-
-<h3>What We Clean</h3>
-<p>Every room in your home receives our attention, including:</p>
+                'full_content' => '<h3>Professional Deep Cleaning</h3>
+<p>Our deep cleaning service goes far beyond regular cleaning. We tackle built-up grime, hidden dust and bacteria in every corner of your home or workspace.</p>
+<h3>What\'s Included</h3>
 <ul>
-<li><strong>Living Areas:</strong> Dusting, vacuuming, mopping, and organizing</li>
-<li><strong>Bedrooms:</strong> Bed making, dusting, vacuuming, and surface cleaning</li>
-<li><strong>Kitchen:</strong> Countertop sanitization, appliance exteriors, stovetop, and sink cleaning</li>
-<li><strong>Bathrooms:</strong> Toilet, shower, tub, sink, and floor sanitization</li>
+<li><strong>All Rooms:</strong> Detailed cleaning of every room from ceiling to floor</li>
+<li><strong>Kitchen:</strong> Degreasing of stoves, ovens, hoods, countertops and cabinets</li>
+<li><strong>Bathrooms:</strong> Tile scrubbing, grout cleaning, sanitization</li>
+<li><strong>Floors:</strong> Vacuuming, scrubbing and mopping with disinfectant</li>
 </ul>
-
-<h3>Our Cleaning Process</h3>
-<p>We follow a systematic approach to ensure nothing is missed. Our team starts from the top (ceiling fans, light fixtures) and works down to the floors, ensuring dust and debris are captured, not just moved around.</p>',
-                'meta_description' => 'Professional full home cleaning service in Dubai. Complete deep cleaning for living rooms, bedrooms, kitchen & bathrooms. Eco-friendly products.',
+<p>Ideal for periodic refresh, pre/post-event cleaning, or whenever your space needs a true reset.</p>',
+                'meta_description' => 'Professional deep cleaning service in Dubai. Top-to-bottom hygiene, disinfection and detailed cleaning for homes and offices.',
                 'image' => '1.png',
                 'sort_order' => 1,
             ],
             [
-                'title' => 'Kitchen Cleaning',
-                'description' => 'Deep kitchen cleaning service targeting grease, grime, and food residue. We clean appliances, countertops, cabinets, and floors to restore your kitchen to pristine condition.',
+                'title' => 'Maid Services',
+                'description' => 'Reliable maid services for everyday cleaning, tidying and household upkeep. Trained, trustworthy maids you can count on, available hourly, weekly or monthly.',
                 'features' => [
-                    'Countertop sanitization',
-                    'Stovetop & oven cleaning',
-                    'Refrigerator exterior',
-                    'Cabinet fronts wiping',
-                    'Sink & faucet polishing',
-                    'Floor mopping',
-                    'Microwave cleaning',
-                    'Trash bin sanitization'
+                    'Daily / weekly / monthly visits',
+                    'Trained female maids',
+                    'English-speaking staff',
+                    'Dusting & tidying',
+                    'Laundry & ironing on request',
+                    'Kitchen & bathroom cleaning',
+                    'Flexible hours',
+                    'Materials optional',
                 ],
-                'full_content' => '<h3>Professional Kitchen Deep Clean</h3>
-<p>The kitchen is the heart of your home and often the hardest to keep clean. Our kitchen cleaning service tackles built-up grease, stubborn stains, and hidden grime that regular cleaning misses.</p>
-
-<h3>Areas We Focus On</h3>
+                'full_content' => '<h3>Reliable Maid Services</h3>
+<p>Whether you need help a few hours a week or a dedicated maid every day, our trained professionals deliver dependable, friendly service tailored to your routine.</p>
+<h3>What Our Maids Do</h3>
 <ul>
-<li><strong>Stovetop & Oven:</strong> Degreasing and deep cleaning</li>
-<li><strong>Countertops:</strong> Sanitization and polishing</li>
-<li><strong>Cabinets:</strong> Exterior cleaning and degreasing</li>
-<li><strong>Appliances:</strong> Exterior cleaning of all kitchen appliances</li>
-<li><strong>Sink Area:</strong> Deep cleaning and polishing</li>
-</ul>
-
-<h3>Eco-Friendly Products</h3>
-<p>We use food-safe, eco-friendly cleaning products that are tough on grease but safe for your family and the environment.</p>',
-                'meta_description' => 'Professional kitchen cleaning service in Dubai. Deep clean for stovetops, ovens, countertops & cabinets. Food-safe, eco-friendly products.',
+<li>General dusting, tidying and organizing</li>
+<li>Kitchen cleaning and dishwashing</li>
+<li>Bathroom cleaning and sanitization</li>
+<li>Floor sweeping, vacuuming and mopping</li>
+<li>Laundry, ironing and bed making (on request)</li>
+</ul>',
+                'meta_description' => 'Professional maid services in Dubai. Trained, trustworthy female maids for daily, weekly or monthly home cleaning.',
                 'image' => '2.png',
                 'sort_order' => 2,
             ],
             [
-                'title' => 'Bathroom Cleaning',
-                'description' => 'Thorough bathroom sanitization and cleaning. We tackle soap scum, mold, and hard water stains to leave your bathroom fresh, hygienic, and sparkling clean.',
-                'features' => [
-                    'Toilet deep cleaning',
-                    'Shower & tub scrubbing',
-                    'Sink & vanity cleaning',
-                    'Mirror polishing',
-                    'Tile & grout cleaning',
-                    'Floor sanitization',
-                    'Faucet polishing',
-                    'Mold prevention treatment'
-                ],
-                'full_content' => '<h3>Complete Bathroom Sanitization</h3>
-<p>Our bathroom cleaning service goes beyond surface cleaning. We target bacteria, mold, and buildup in all the hard-to-reach places to ensure your bathroom is truly hygienic.</p>
-
-<h3>Our Cleaning Checklist</h3>
-<ul>
-<li>Toilet bowl, seat, and exterior sanitization</li>
-<li>Shower and bathtub deep scrubbing</li>
-<li>Glass door and mirror streak-free cleaning</li>
-<li>Tile and grout cleaning</li>
-<li>Sink, vanity, and countertop sanitization</li>
-<li>Floor mopping with disinfectant</li>
-</ul>
-
-<h3>Anti-Bacterial Treatment</h3>
-<p>We use hospital-grade disinfectants that eliminate 99.9% of bacteria and germs, leaving your bathroom not just clean, but truly sanitized.</p>',
-                'meta_description' => 'Professional bathroom cleaning service in Dubai. Toilet, shower, tiles & sanitization. Hospital-grade disinfectants for a hygienic bathroom.',
-                'image' => '3.png',
-                'sort_order' => 3,
-            ],
-            [
-                'title' => 'Bedroom Cleaning',
-                'description' => 'Complete bedroom cleaning including dusting, vacuuming, and organizing. We ensure your personal space is clean, fresh, and conducive to restful sleep.',
-                'features' => [
-                    'Bed making & linen change',
-                    'Mattress vacuuming',
-                    'Wardrobe exterior cleaning',
-                    'Dusting all surfaces',
-                    'Floor vacuuming',
-                    'Window sill cleaning',
-                    'Light fixture dusting',
-                    'Under-bed cleaning'
-                ],
-                'full_content' => '<h3>Your Sanctuary, Refreshed</h3>
-<p>Your bedroom should be a peaceful retreat. Our bedroom cleaning service ensures every surface is dust-free, floors are spotless, and the air quality is improved.</p>
-
-<h3>What We Include</h3>
-<ul>
-<li><strong>Bed:</strong> Making, linen change (if provided), pillow fluffing</li>
-<li><strong>Surfaces:</strong> Dusting nightstands, dressers, and decor</li>
-<li><strong>Floors:</strong> Thorough vacuuming or mopping</li>
-<li><strong>Closets:</strong> Exterior cleaning, inside upon request</li>
-</ul>
-
-<h3>Allergy-Friendly Cleaning</h3>
-<p>We pay special attention to dust and allergens, using HEPA-filter vacuums and hypoallergenic products to improve your sleep environment.</p>',
-                'meta_description' => 'Professional bedroom cleaning service in Dubai. Dusting, vacuuming, bed making & mattress cleaning. Allergy-friendly products.',
-                'image' => '4.png',
-                'sort_order' => 4,
-            ],
-            [
                 'title' => 'Window Cleaning',
-                'description' => 'Professional window cleaning for crystal-clear views. We clean interior and exterior glass, frames, and sills using streak-free cleaning techniques.',
+                'description' => 'Crystal-clear, streak-free windows inside and out. We clean glass, frames, sills and tracks using professional tools and safe techniques.',
                 'features' => [
                     'Interior glass cleaning',
                     'Exterior glass cleaning',
                     'Frame & sill wiping',
-                    'Screen cleaning',
-                    'Streak-free finish',
                     'Track cleaning',
+                    'Streak-free finish',
                     'Hard water stain removal',
-                    'Sliding door cleaning'
+                    'Screen cleaning',
+                    'Safe high-reach equipment',
                 ],
                 'full_content' => '<h3>Crystal Clear Windows</h3>
-<p>Clean windows transform the look of your home and let natural light flood in. Our professional window cleaning service ensures streak-free, spotless glass every time.</p>
-
-<h3>Our Window Cleaning Process</h3>
+<p>Sparkling windows make your space look brighter and more welcoming. Our trained team uses professional squeegees and eco-friendly solutions for a streak-free shine every time.</p>
+<h3>Where We Clean</h3>
 <ul>
-<li><strong>Preparation:</strong> Protecting surrounding areas</li>
-<li><strong>Cleaning:</strong> Using professional squeegees and solutions</li>
-<li><strong>Detailing:</strong> Frames, sills, and tracks</li>
-<li><strong>Finishing:</strong> Streak-free polish</li>
-</ul>
-
-<h3>Safe & Efficient</h3>
-<p>Our trained team uses proper safety equipment for high windows and balconies. We are insured and follow strict safety protocols.</p>',
-                'meta_description' => 'Professional window cleaning service in Dubai. Interior & exterior glass cleaning, streak-free finish. Safe cleaning for high-rise buildings.',
+<li>Villas, apartments and offices</li>
+<li>Glass doors, sliding panels and partitions</li>
+<li>Balcony and exterior windows</li>
+</ul>',
+                'meta_description' => 'Professional window cleaning in Dubai. Streak-free interior and exterior glass cleaning for villas, apartments and offices.',
                 'image' => '5.png',
+                'sort_order' => 3,
+            ],
+            [
+                'title' => 'Carpet Cleaning',
+                'description' => 'Deep carpet cleaning with hot water extraction and steam. We remove stains, dust mites, allergens and odors to restore a fresh, like-new look.',
+                'features' => [
+                    'Hot water extraction',
+                    'Steam sanitization',
+                    'Stain & spot treatment',
+                    'Odor neutralization',
+                    'Allergen & dust mite removal',
+                    'Fabric-safe solutions',
+                    'Quick drying',
+                    'Pet & child safe',
+                ],
+                'full_content' => '<h3>Professional Carpet Cleaning</h3>
+<p>Carpets trap dust, allergens, bacteria and odors over time. Our hot water extraction and steam cleaning methods lift dirt from deep in the fibres for a healthier home.</p>
+<h3>Why Choose Us</h3>
+<ul>
+<li>Trained technicians with professional equipment</li>
+<li>Pet and child-safe cleaning agents</li>
+<li>Quick drying so you can use rooms the same day</li>
+</ul>',
+                'meta_description' => 'Professional carpet cleaning in Dubai. Steam cleaning, stain removal and allergen extraction for a healthier home.',
+                'image' => '8.png',
+                'sort_order' => 4,
+            ],
+            [
+                'title' => 'Sofa Cleaning',
+                'description' => 'Bring your sofas back to life. Deep shampoo and steam cleaning that removes stains, dust, and dust mites while preserving fabric quality.',
+                'features' => [
+                    'Fabric & leather safe',
+                    'Stain removal',
+                    'Steam sanitization',
+                    'Dust mite extraction',
+                    'Odor elimination',
+                    'Cushion deep cleaning',
+                    'Fabric protection',
+                    'Quick drying',
+                ],
+                'full_content' => '<h3>Deep Sofa Cleaning</h3>
+<p>Daily use leaves your sofa with hidden dust, allergens and stains. Our professional sofa cleaning restores freshness using shampooing and steam extraction safe for all fabric types.</p>',
+                'meta_description' => 'Professional sofa cleaning in Dubai. Deep shampoo and steam cleaning for fabric and leather sofas.',
+                'image' => '6.png',
                 'sort_order' => 5,
             ],
             [
-                'title' => 'Sofa & Carpet Cleaning',
-                'description' => 'Deep cleaning for sofas, carpets, and upholstery. We remove stains, odors, and allergens using professional steam cleaning and extraction methods.',
+                'title' => 'Mattress Cleaning',
+                'description' => 'Hygienic mattress cleaning that eliminates dust mites, bed bugs, sweat, stains and allergens for healthier, more restful sleep.',
                 'features' => [
-                    'Sofa deep cleaning',
-                    'Carpet shampooing',
-                    'Stain removal',
+                    'Dust mite removal',
+                    'Stain & sweat treatment',
+                    'Steam sanitization',
                     'Odor elimination',
-                    'Allergen extraction',
-                    'Steam cleaning',
-                    'Fabric protection',
-                    'Quick drying'
+                    'Allergy-friendly',
+                    'All mattress sizes',
+                    'Quick drying',
+                    'Safe for kids & pets',
                 ],
-                'full_content' => '<h3>Revive Your Upholstery</h3>
-<p>Sofas and carpets accumulate dust, allergens, and stains over time. Our professional cleaning service restores them to like-new condition while extending their lifespan.</p>
-
-<h3>Our Cleaning Methods</h3>
-<ul>
-<li><strong>Hot Water Extraction:</strong> Deep cleaning for carpets</li>
-<li><strong>Steam Cleaning:</strong> Sanitizing upholstery</li>
-<li><strong>Dry Cleaning:</strong> For delicate fabrics</li>
-<li><strong>Stain Treatment:</strong> Pre-treatment for stubborn spots</li>
-</ul>
-
-<h3>Health Benefits</h3>
-<p>Regular upholstery cleaning removes dust mites, allergens, and bacteria, improving indoor air quality and reducing allergy symptoms.</p>',
-                'meta_description' => 'Professional sofa & carpet cleaning in Dubai. Steam cleaning, stain removal & allergen extraction. Restore your upholstery to like-new.',
-                'image' => '6.png',
+                'full_content' => '<h3>Healthier Sleep, Cleaner Mattress</h3>
+<p>You spend a third of your life on your mattress. Our professional cleaning eliminates dust mites, allergens, sweat and stains for a healthier sleep environment.</p>',
+                'meta_description' => 'Mattress cleaning in Dubai. Removes dust mites, stains and allergens for healthier sleep.',
+                'image' => '4.png',
                 'sort_order' => 6,
             ],
             [
-                'title' => 'Office Cleaning',
-                'description' => 'Professional commercial cleaning for offices and workspaces. We maintain clean, healthy environments that boost productivity and impress clients.',
+                'title' => 'Villa Deep Cleaning',
+                'description' => 'Complete deep cleaning for villas of every size. From bedrooms to gardens, we cover every inch with detail and care.',
                 'features' => [
-                    'Desk & workstation cleaning',
-                    'Common area cleaning',
-                    'Restroom sanitization',
-                    'Floor maintenance',
-                    'Kitchen/pantry cleaning',
-                    'Trash removal',
-                    'Glass & window cleaning',
-                    'Disinfection services'
+                    'All rooms & floors',
+                    'Kitchen deep clean',
+                    'Bathroom sanitization',
+                    'Window & balcony cleaning',
+                    'Floor scrubbing & polishing',
+                    'Outdoor areas covered',
+                    'Furniture & upholstery',
+                    'Pre/post-handover ready',
                 ],
-                'full_content' => '<h3>Professional Workspace Cleaning</h3>
-<p>A clean office is essential for employee health, productivity, and creating a professional impression. Our commercial cleaning services are tailored to your business needs.</p>
-
-<h3>Services We Offer</h3>
+                'full_content' => '<h3>Complete Villa Deep Cleaning</h3>
+<p>From living rooms and bedrooms to kitchens, bathrooms, balconies and outdoor areas — our team brings every part of your villa to a sparkling, hygienic finish.</p>
+<h3>Perfect For</h3>
 <ul>
-<li><strong>Daily Cleaning:</strong> Regular maintenance and tidying</li>
-<li><strong>Deep Cleaning:</strong> Periodic thorough cleaning</li>
-<li><strong>Disinfection:</strong> High-touch surface sanitization</li>
-<li><strong>Specialized:</strong> Carpet, window, and upholstery cleaning</li>
-</ul>
-
-<h3>Flexible Scheduling</h3>
-<p>We understand business needs. Our cleaning can be scheduled during or after business hours, on weekends, or any time that suits your operations.</p>',
-                'meta_description' => 'Professional office cleaning service in Dubai. Daily maintenance, deep cleaning & disinfection. Flexible scheduling for businesses.',
+<li>Move-in / move-out cleaning</li>
+<li>Post-construction cleaning</li>
+<li>Seasonal refresh</li>
+<li>Pre-event preparation</li>
+</ul>',
+                'meta_description' => 'Villa deep cleaning service in Dubai. Complete top-to-bottom cleaning for villas of every size.',
                 'image' => '7.png',
                 'sort_order' => 7,
             ],
             [
-                'title' => 'Move In/Out Cleaning',
-                'description' => 'Comprehensive cleaning for moving transitions. We prepare spaces for new occupants or ensure you get your security deposit back with our thorough cleaning.',
+                'title' => 'Apartment Deep Cleaning',
+                'description' => 'Top-to-bottom apartment deep cleaning. Perfect for move-in, move-out, or a periodic refresh of your home.',
                 'features' => [
-                    'Complete deep cleaning',
-                    'Appliance deep clean',
-                    'Cabinet interior cleaning',
-                    'Closet cleaning',
-                    'Wall spot cleaning',
-                    'Floor deep cleaning',
-                    'Window cleaning',
-                    'Final inspection ready'
+                    'All rooms cleaned',
+                    'Kitchen degreasing',
+                    'Bathroom sanitization',
+                    'Floor scrubbing & mopping',
+                    'Window & balcony cleaning',
+                    'Cabinet & wardrobe wipe-down',
+                    'Move-in / move-out ready',
+                    'Eco-friendly products',
                 ],
-                'full_content' => '<h3>Stress-Free Moving Cleaning</h3>
-<p>Moving is stressful enough. Let us handle the cleaning so you can focus on your transition. Our move in/out cleaning ensures properties are spotless for the next chapter.</p>
-
-<h3>Move-Out Cleaning</h3>
-<p>Help secure your deposit back with our thorough end-of-tenancy cleaning:</p>
-<ul>
-<li>Complete property deep cleaning</li>
-<li>Appliance interior and exterior cleaning</li>
-<li>Cabinet and closet cleaning</li>
-<li>Wall marks and scuffs removal</li>
-</ul>
-
-<h3>Move-In Cleaning</h3>
-<p>Start fresh in your new home:</p>
-<ul>
-<li>Sanitization of all surfaces</li>
-<li>Deep cleaning before your belongings arrive</li>
-<li>Ensuring a healthy environment from day one</li>
-</ul>',
-                'meta_description' => 'Move in/out cleaning service in Dubai. End of tenancy cleaning, deep clean for new homes. Help with security deposit return.',
-                'image' => '8.png',
+                'full_content' => '<h3>Apartment Deep Cleaning</h3>
+<p>Whether you\'re moving in, moving out, or simply want a thorough refresh, our apartment deep cleaning leaves every room hygienic, fresh and inspection-ready.</p>',
+                'meta_description' => 'Apartment deep cleaning in Dubai. Move-in / move-out and periodic deep cleans for apartments.',
+                'image' => '3.png',
                 'sort_order' => 8,
+            ],
+            [
+                'title' => 'Outdoor Cleaning',
+                'description' => 'Outdoor area cleaning including balconies, terraces, driveways and exterior surfaces. We restore curb appeal and remove dust, dirt and stains.',
+                'features' => [
+                    'Balcony & terrace cleaning',
+                    'Driveway washing',
+                    'Garden patio cleaning',
+                    'Exterior wall wipe-down',
+                    'Tile & paving scrubbing',
+                    'Dust & sand removal',
+                    'Pressure washing on request',
+                    'Outdoor furniture cleaning',
+                ],
+                'full_content' => '<h3>Outdoor Cleaning Services</h3>
+<p>Dubai dust and sand build up fast on outdoor areas. Our team cleans balconies, terraces, driveways and patios so the outside of your home looks as good as the inside.</p>',
+                'meta_description' => 'Outdoor cleaning in Dubai. Balcony, terrace, driveway and exterior cleaning for villas and apartments.',
+                'image' => '5.png',
+                'sort_order' => 9,
+            ],
+            [
+                'title' => 'Commercial Cleaning',
+                'description' => 'Professional commercial cleaning for offices, shops, clinics and other businesses. Daily, weekly or one-time cleaning to keep your workplace healthy and presentable.',
+                'features' => [
+                    'Offices, shops, clinics',
+                    'Daily / weekly / monthly plans',
+                    'Workstation cleaning',
+                    'Restroom sanitization',
+                    'Floor maintenance',
+                    'Pantry & break room cleaning',
+                    'Trash & recycling',
+                    'After-hours scheduling',
+                ],
+                'full_content' => '<h3>Commercial Cleaning You Can Rely On</h3>
+<p>A clean workplace boosts productivity, impresses clients and keeps your team healthy. Our commercial cleaning plans are tailored to your business needs and schedule.</p>
+<h3>We Clean</h3>
+<ul>
+<li>Offices and co-working spaces</li>
+<li>Retail shops and showrooms</li>
+<li>Clinics and salons</li>
+<li>Restaurants and cafés</li>
+</ul>',
+                'meta_description' => 'Commercial cleaning in Dubai. Office, shop and clinic cleaning with daily, weekly and monthly plans.',
+                'image' => '7.png',
+                'sort_order' => 10,
+            ],
+            [
+                'title' => 'Domestic Cleaning',
+                'description' => 'Regular domestic cleaning to keep your home spotless every week. Perfect for busy families and professionals who want a clean, comfortable home without the effort.',
+                'features' => [
+                    'Weekly / bi-weekly visits',
+                    'Living areas & bedrooms',
+                    'Kitchen & bathroom cleaning',
+                    'Dusting & vacuuming',
+                    'Floor mopping',
+                    'Trash removal',
+                    'Trusted recurring staff',
+                    'Flexible scheduling',
+                ],
+                'full_content' => '<h3>Regular Domestic Cleaning</h3>
+<p>Come home to a spotless space, every time. Our domestic cleaning service handles all routine household cleaning so you can relax and enjoy your home.</p>',
+                'meta_description' => 'Domestic cleaning in Dubai. Regular weekly home cleaning by trusted, trained professionals.',
+                'image' => '1.png',
+                'sort_order' => 11,
             ],
         ];
 
+        $slugs = [];
         foreach ($services as $serviceData) {
             $serviceData['slug'] = Str::slug($serviceData['title']);
             $serviceData['is_active'] = true;
+            $slugs[] = $serviceData['slug'];
             Service::updateOrCreate(
                 ['slug' => $serviceData['slug']],
                 $serviceData
             );
         }
+
+        // Remove any services not in the canonical list
+        Service::whereNotIn('slug', $slugs)->delete();
     }
 }

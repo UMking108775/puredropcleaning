@@ -6,6 +6,7 @@ use App\Models\Page;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\QuoteRequestController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\PageController;
@@ -66,6 +67,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         
         // Services CRUD
         Route::resource('services', ServiceController::class)->except(['show']);
+
+        // Packages CRUD
+        Route::resource('packages', PackageController::class)->except(['show']);
         
         // Pages CRUD
         Route::resource('pages', PageController::class)->except(['show']);

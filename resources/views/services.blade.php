@@ -18,11 +18,30 @@
     </div>
 </section>
 
+@php
+    $brandName    = \App\Models\Setting::get('brand_name', 'Pure Drop Building Cleaning Services LLC');
+    $whatsappBase = rtrim(\App\Models\Setting::get('social_whatsapp', 'https://wa.me/971562170386'), '/');
+@endphp
+
 <!-- Services Grid -->
 <section class="py-12 sm:py-16 lg:py-20 bg-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
             @foreach($services as $service)
+            @php
+                $bookMessage = urlencode(
+                    "Hello {$brandName},\n\n"
+                    . "I'd like to book the following service:\n\n"
+                    . "🧹 Service: {$service->title}\n"
+                    . "📅 Preferred Date: \n"
+                    . "⏰ Preferred Time: \n"
+                    . "📍 Location / Address: \n"
+                    . "🏠 Property Type (Villa / Apartment / Office): \n"
+                    . "📐 Size (sqft / rooms): \n"
+                    . "📝 Additional Notes: \n\n"
+                    . "Please share availability and a quotation.\n\nThank you!"
+                );
+            @endphp
             <div class="card p-4 sm:p-5 lg:p-6 hover:shadow-xl transition-all duration-300">
                 <div class="flex flex-row items-start gap-3 sm:gap-4 lg:gap-6">
                     <!-- Service Image -->
@@ -51,7 +70,7 @@
                         @endif
                         <div class="flex flex-wrap gap-2">
                             <a href="{{ route('service.show', ['slug' => $service->slug ?? Str::slug($service->title)]) }}" class="btn btn-outline text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">More Details</a>
-                            <a href="{{ rtrim(App\Models\Setting::get('social_whatsapp', 'https://wa.me/971551018837'), '/') }}?text={{ urlencode("Hi! I'd like to book the {$service->title} service. Please share the details.") }}" target="_blank" rel="noopener" class="btn btn-primary text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">Book Now</a>
+                            <a href="{{ $whatsappBase }}?text={{ $bookMessage }}" target="_blank" rel="noopener" class="btn btn-primary text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -60,6 +79,9 @@
         </div>
     </div>
 </section>
+
+<!-- Pricing & Subscription Plans -->
+@include('partials.pricing')
 
 <!-- CTA Section -->
 @include('partials.cta-section')

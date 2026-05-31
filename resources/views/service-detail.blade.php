@@ -76,9 +76,28 @@
                     <p class="text-white/80 text-sm mb-6">Get a free quote for {{ $service->title }} and experience the PureDropCleaning difference.</p>
                     
                     @php
-                        $whatsappBase = rtrim(\App\Models\Setting::get('social_whatsapp', 'https://wa.me/971551018837'), '/');
-                        $bookMessage  = urlencode("Hi! I'd like to book the {$service->title} service. Please share the details.");
-                        $askMessage   = urlencode("Hi! I'm interested in {$service->title} service.");
+                        $brandName    = \App\Models\Setting::get('brand_name', 'Pure Drop Building Cleaning Services LLC');
+                        $whatsappBase = rtrim(\App\Models\Setting::get('social_whatsapp', 'https://wa.me/971562170386'), '/');
+                        $bookMessage  = urlencode(
+                            "Hello {$brandName},\n\n"
+                            . "I'd like to book the following service:\n\n"
+                            . "🧹 Service: {$service->title}\n"
+                            . "📅 Preferred Date: \n"
+                            . "⏰ Preferred Time: \n"
+                            . "📍 Location / Address: \n"
+                            . "🏠 Property Type (Villa / Apartment / Office): \n"
+                            . "📐 Size (sqft / rooms): \n"
+                            . "📝 Additional Notes: \n\n"
+                            . "Please share availability and a quotation.\n\nThank you!"
+                        );
+                        $askMessage   = urlencode(
+                            "Hello {$brandName},\n\n"
+                            . "I'm interested in your {$service->title} service. Could you please share:\n\n"
+                            . "• Pricing details\n"
+                            . "• Available time slots\n"
+                            . "• What's included in the service\n\n"
+                            . "Thank you!"
+                        );
                     @endphp
                     <a href="{{ $whatsappBase }}?text={{ $bookMessage }}" target="_blank" rel="noopener" class="btn bg-accent text-dark hover:bg-accent/90 w-full mb-3 text-sm sm:text-base">
                         <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,17 +114,17 @@
                     </a>
 
                     <div class="mt-6 pt-6 border-t border-white/20">
-                        <div class="flex items-center text-sm text-white/80 mb-2">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <a href="tel:{{ \App\Models\Setting::get('brand_phone', '+971 56 217 0386') }}" class="flex items-center text-sm text-white/80 hover:text-white mb-2 transition-colors">
+                            <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                             </svg>
-                            +971 55 101 8837
-                        </div>
+                            {{ \App\Models\Setting::get('brand_phone', '+971 56 217 0386') }}
+                        </a>
                         <div class="flex items-center text-sm text-white/80">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
-                            Open Daily: 8AM - 9PM
+                            {{ \App\Models\Setting::get('brand_hours', '7 Days a Week, 08:00 AM – 08:00 PM') }}
                         </div>
                     </div>
                 </div>
