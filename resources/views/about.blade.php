@@ -24,17 +24,6 @@
     </div>
 </section>
 
-@if($page && $page->content)
-<!-- Dynamic Content from Admin -->
-<section class="py-12 sm:py-16 lg:py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="content-html">
-            {!! $page->content !!}
-        </div>
-    </div>
-</section>
-@else
-
 <!-- Welcome / Intro -->
 <section class="py-12 sm:py-16 lg:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -101,7 +90,6 @@
         </div>
     </div>
 </section>
-@endif
 
 <!-- Stats -->
 <section class="py-10 sm:py-12 lg:py-16 bg-gradient-to-r from-primary via-primary-dark to-dark">
