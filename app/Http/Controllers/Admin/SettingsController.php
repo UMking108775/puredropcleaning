@@ -99,13 +99,15 @@ class SettingsController extends Controller
             'brand_logo' => 'logo.png', // Default path in public
             'brand_favicon' => '',
             'brand_address' => 'Al Jafiliya, Dubai, United Arab Emirates',
-            'brand_phone' => '+971 55 101 8837',
+            'brand_phone' => '+971 56 217 0386',
             'brand_email' => 'info.puredropcleaning@gmail.com',
             'brand_hours' => '8:00 AM - 9:00 PM (Daily)',
-            'social_facebook' => '#',
-            'social_instagram' => '#',
-            'social_tiktok' => '#',
-            'social_whatsapp' => 'https://wa.me/971551018837',
+            'social_facebook' => '',
+            'social_instagram' => '',
+            'social_tiktok' => '',
+            'social_whatsapp' => 'https://api.whatsapp.com/send?phone=971562170386',
+            'social_youtube' => '',
+            'trustindex_widget_id' => '9208233822d1826b65263bb0dba',
             'meta_title_suffix' => 'Professional Cleaning Services',
         ];
 
@@ -128,13 +130,15 @@ class SettingsController extends Controller
             'social_instagram' => 'nullable|string',
             'social_tiktok' => 'nullable|string',
             'social_whatsapp' => 'nullable|string',
+            'social_youtube' => 'nullable|string',
+            'trustindex_widget_id' => 'nullable|string',
             'meta_title_suffix' => 'nullable|string',
         ]);
 
         $fields = [
             'brand_name', 'brand_address', 'brand_phone', 'brand_email', 'brand_hours',
             'social_facebook', 'social_instagram', 'social_tiktok', 'social_whatsapp',
-            'meta_title_suffix'
+            'social_youtube', 'trustindex_widget_id', 'meta_title_suffix'
         ];
 
         // Handle Text Fields

@@ -46,3 +46,57 @@
 @else
     @include('partials.wcu-styles.style1', ['wcu' => $wcu])
 @endif
+
+<!-- On-Scroll Number Counting Animation -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const counters = document.querySelectorAll('[data-wcu-counter]');
+        if (!counters.length) return;
+
+        const observer = new IntersectionObserver(function(entries, obs) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const rawValue = (el.getAttribute('data-wcu-counter') || el.innerText || '').trim();
+                    
+                    // Match prefix, number, and suffix (e.g., "5000+", "98%", "10+", "AED 500+")
+                    const match = rawValue.match(/^([^\d]*)([\d,]+)(\.?\d*)(.*)$/);
+                    if (match) {
+                        const prefix = match[1] || '';
+                        const targetNum = parseFloat(match[2].replace(/,/g, '') + (match[3] || ''));
+                        const suffix = match[4] || '';
+                        const duration = 1600; // ms
+                        const startTime = performance.now();
+
+                        function step(now) {
+                            const elapsed = now - startTime;
+                            const progress = Math.min(elapsed / duration, 1);
+                            // Ease-out cubic curve: fast start, soft finish
+                            const ease = 1 - Math.pow(1 - progress, 3);
+                            const current = Math.floor(ease * targetNum);
+                            const formatted = targetNum >= 1000 ? current.toLocaleString() : current;
+                            el.textContent = prefix + formatted + suffix;
+
+                            if (progress < 1) {
+                                requestAnimationFrame(step);
+                            } else {
+                                const finalFormatted = targetNum >= 1000 ? targetNum.toLocaleString() : targetNum;
+                                el.textContent = prefix + finalFormatted + suffix;
+                            }
+                        }
+
+                        requestAnimationFrame(step);
+                    }
+                    obs.unobserve(el);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        counters.forEach(function(el) {
+            observer.observe(el);
+        });
+    });
+</script>

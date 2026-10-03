@@ -31,10 +31,10 @@
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <!-- Service Image -->
-                <div class="rounded-2xl overflow-hidden mb-6 sm:mb-8">
+                <div class="rounded-2xl overflow-hidden mb-6 sm:mb-8 shadow-sm">
                     <img src="{{ $service->image_url }}" 
                          alt="{{ $service->title }}" 
-                         class="w-full h-64 sm:h-80 lg:h-96 object-cover">
+                         class="w-full aspect-video object-cover">
                 </div>
 
                 <!-- Description -->
@@ -140,7 +140,7 @@
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             @foreach($otherServices as $other)
             <a href="{{ route('service.show', ['slug' => $other->slug ?? Str::slug($other->title)]) }}" class="bg-white rounded-xl overflow-hidden group hover:shadow-lg transition-shadow">
-                <div class="aspect-[4/3] overflow-hidden">
+                <div class="aspect-video overflow-hidden">
                     <img src="{{ $other->image_url }}" 
                          alt="{{ $other->title }}" 
                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">

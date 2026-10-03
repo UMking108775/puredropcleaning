@@ -35,7 +35,7 @@ class ServiceSeeder extends Seeder
 </ul>
 <p>Ideal for periodic refresh, pre/post-event cleaning, or whenever your space needs a true reset.</p>',
                 'meta_description' => 'Professional deep cleaning service in Dubai. Top-to-bottom hygiene, disinfection and detailed cleaning for homes and offices.',
-                'image' => '1.png',
+                'image' => 'deep-cleaning.png',
                 'sort_order' => 1,
             ],
             [
@@ -62,7 +62,7 @@ class ServiceSeeder extends Seeder
 <li>Laundry, ironing and bed making (on request)</li>
 </ul>',
                 'meta_description' => 'Professional maid services in Dubai. Trained, trustworthy female maids for daily, weekly or monthly home cleaning.',
-                'image' => '2.png',
+                'image' => 'maid-services.png',
                 'sort_order' => 2,
             ],
             [
@@ -87,7 +87,7 @@ class ServiceSeeder extends Seeder
 <li>Balcony and exterior windows</li>
 </ul>',
                 'meta_description' => 'Professional window cleaning in Dubai. Streak-free interior and exterior glass cleaning for villas, apartments and offices.',
-                'image' => '5.png',
+                'image' => 'window-cleaning.png',
                 'sort_order' => 3,
             ],
             [
@@ -112,7 +112,7 @@ class ServiceSeeder extends Seeder
 <li>Quick drying so you can use rooms the same day</li>
 </ul>',
                 'meta_description' => 'Professional carpet cleaning in Dubai. Steam cleaning, stain removal and allergen extraction for a healthier home.',
-                'image' => '8.png',
+                'image' => 'carpet-cleaning.png',
                 'sort_order' => 4,
             ],
             [
@@ -131,7 +131,7 @@ class ServiceSeeder extends Seeder
                 'full_content' => '<h3>Deep Sofa Cleaning</h3>
 <p>Daily use leaves your sofa with hidden dust, allergens and stains. Our professional sofa cleaning restores freshness using shampooing and steam extraction safe for all fabric types.</p>',
                 'meta_description' => 'Professional sofa cleaning in Dubai. Deep shampoo and steam cleaning for fabric and leather sofas.',
-                'image' => '6.png',
+                'image' => 'sofa-cleaning.png',
                 'sort_order' => 5,
             ],
             [
@@ -150,7 +150,7 @@ class ServiceSeeder extends Seeder
                 'full_content' => '<h3>Healthier Sleep, Cleaner Mattress</h3>
 <p>You spend a third of your life on your mattress. Our professional cleaning eliminates dust mites, allergens, sweat and stains for a healthier sleep environment.</p>',
                 'meta_description' => 'Mattress cleaning in Dubai. Removes dust mites, stains and allergens for healthier sleep.',
-                'image' => '4.png',
+                'image' => 'mattress-cleaning.png',
                 'sort_order' => 6,
             ],
             [
@@ -176,7 +176,7 @@ class ServiceSeeder extends Seeder
 <li>Pre-event preparation</li>
 </ul>',
                 'meta_description' => 'Villa deep cleaning service in Dubai. Complete top-to-bottom cleaning for villas of every size.',
-                'image' => '7.png',
+                'image' => 'villa-deep-cleaning.png',
                 'sort_order' => 7,
             ],
             [
@@ -195,7 +195,7 @@ class ServiceSeeder extends Seeder
                 'full_content' => '<h3>Apartment Deep Cleaning</h3>
 <p>Whether you\'re moving in, moving out, or simply want a thorough refresh, our apartment deep cleaning leaves every room hygienic, fresh and inspection-ready.</p>',
                 'meta_description' => 'Apartment deep cleaning in Dubai. Move-in / move-out and periodic deep cleans for apartments.',
-                'image' => '3.png',
+                'image' => 'apartment-deep-cleaning.png',
                 'sort_order' => 8,
             ],
             [
@@ -214,7 +214,7 @@ class ServiceSeeder extends Seeder
                 'full_content' => '<h3>Outdoor Cleaning Services</h3>
 <p>Dubai dust and sand build up fast on outdoor areas. Our team cleans balconies, terraces, driveways and patios so the outside of your home looks as good as the inside.</p>',
                 'meta_description' => 'Outdoor cleaning in Dubai. Balcony, terrace, driveway and exterior cleaning for villas and apartments.',
-                'image' => '5.png',
+                'image' => 'outdoor-cleaning.png',
                 'sort_order' => 9,
             ],
             [
@@ -240,7 +240,7 @@ class ServiceSeeder extends Seeder
 <li>Restaurants and cafés</li>
 </ul>',
                 'meta_description' => 'Commercial cleaning in Dubai. Office, shop and clinic cleaning with daily, weekly and monthly plans.',
-                'image' => '7.png',
+                'image' => 'commercial-cleaning.png',
                 'sort_order' => 10,
             ],
             [
@@ -259,7 +259,7 @@ class ServiceSeeder extends Seeder
                 'full_content' => '<h3>Regular Domestic Cleaning</h3>
 <p>Come home to a spotless space, every time. Our domestic cleaning service handles all routine household cleaning so you can relax and enjoy your home.</p>',
                 'meta_description' => 'Domestic cleaning in Dubai. Regular weekly home cleaning by trusted, trained professionals.',
-                'image' => '1.png',
+                'image' => 'domestic-cleaning.png',
                 'sort_order' => 11,
             ],
         ];

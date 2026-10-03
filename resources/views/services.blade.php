@@ -45,7 +45,7 @@
             <div class="card p-4 sm:p-5 lg:p-6 hover:shadow-xl transition-all duration-300">
                 <div class="flex flex-row items-start gap-3 sm:gap-4 lg:gap-6">
                     <!-- Service Image -->
-                    <a href="{{ route('service.show', ['slug' => $service->slug ?? Str::slug($service->title)]) }}" class="w-24 sm:w-28 lg:w-36 aspect-square rounded-lg sm:rounded-xl overflow-hidden flex-shrink-0 bg-light block">
+                    <a href="{{ route('service.show', ['slug' => $service->slug ?? Str::slug($service->title)]) }}" class="w-28 sm:w-36 lg:w-48 aspect-video rounded-lg sm:rounded-xl overflow-hidden flex-shrink-0 bg-light block shadow-2xs">
                         <img src="{{ $service->image_url }}" 
                              alt="{{ $service->title }}" 
                              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">

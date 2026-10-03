@@ -96,27 +96,34 @@
                 <label class="style-option cursor-pointer group" data-style="style3">
                     <input type="radio" name="wcu_style" value="style3" class="sr-only" {{ ($data['wcu_style'] ?? 'style1') === 'style3' ? 'checked' : '' }}>
                     <div class="border-2 rounded-xl p-3 transition-all duration-200 {{ ($data['wcu_style'] ?? 'style1') === 'style3' ? 'border-primary bg-primary/5 ring-2 ring-primary/20' : 'border-gray-200 hover:border-primary/40' }}">
-                        <div class="bg-gray-800 rounded-lg p-3 mb-3 border border-gray-700 aspect-[4/3] flex flex-col items-center justify-center">
-                            <div class="text-center mb-2">
-                                <div class="h-1.5 w-8 bg-accent/30 rounded-full mx-auto mb-1"></div>
-                                <div class="h-2 w-20 bg-gray-600 rounded mx-auto"></div>
+                        <div class="bg-slate-50 rounded-lg p-3 mb-3 border border-slate-200 aspect-[4/3] flex flex-col items-center justify-center">
+                            <div class="text-center mb-1.5">
+                                <div class="h-1.5 w-8 bg-primary/20 rounded-full mx-auto mb-1"></div>
+                                <div class="h-2 w-16 bg-slate-200 rounded mx-auto"></div>
                             </div>
-                            <div class="grid grid-cols-2 gap-1 w-full">
-                                <div class="space-y-1">
-                                    <div class="bg-white/5 border border-white/10 rounded p-1"><div class="h-1 bg-gray-600 rounded"></div></div>
-                                    <div class="bg-white/5 border border-white/10 rounded p-1"><div class="h-1 bg-gray-600 rounded"></div></div>
+                            <div class="grid grid-cols-3 gap-1 w-full">
+                                <div class="col-span-2 bg-white border border-slate-200 rounded p-1.5">
+                                    <div class="h-1.5 w-10 bg-primary/30 rounded mb-1"></div>
+                                    <div class="h-1 w-full bg-slate-100 rounded"></div>
                                 </div>
-                                <div class="grid grid-cols-2 gap-1">
-                                    <div class="bg-primary/30 rounded p-1"><div class="text-[5px] font-bold text-white">10+</div></div>
-                                    <div class="bg-accent/30 rounded p-1"><div class="text-[5px] font-bold text-white">5K</div></div>
-                                    <div class="bg-white/5 border border-white/10 rounded p-1"><div class="text-[5px] font-bold text-accent">15+</div></div>
-                                    <div class="bg-white/5 border border-white/10 rounded p-1"><div class="text-[5px] font-bold text-primary">98%</div></div>
+                                <div class="bg-primary/10 border border-primary/20 rounded p-1 text-center flex flex-col justify-center">
+                                    <div class="text-[5px] font-bold text-primary">5K+</div>
+                                    <div class="text-[4px] text-slate-500">Clients</div>
+                                </div>
+                                <div class="bg-white border border-slate-200 rounded p-1 text-center">
+                                    <div class="text-[5px] font-bold text-emerald-600">10+</div>
+                                </div>
+                                <div class="bg-white border border-slate-200 rounded p-1 text-center">
+                                    <div class="text-[5px] font-bold text-cyan-600">Eco</div>
+                                </div>
+                                <div class="bg-white border border-slate-200 rounded p-1 text-center">
+                                    <div class="text-[5px] font-bold text-primary">98%</div>
                                 </div>
                             </div>
                         </div>
                         <div class="text-center">
-                            <div class="font-semibold text-sm text-dark">Dark Modern</div>
-                            <div class="text-xs text-gray">Glassmorphism effect</div>
+                            <div class="font-semibold text-sm text-dark">Executive Bento</div>
+                            <div class="text-xs text-gray">Light luxury bento layout</div>
                         </div>
                     </div>
                 </label>

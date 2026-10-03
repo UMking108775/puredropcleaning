@@ -17,7 +17,10 @@ use App\Http\Controllers\ContactController;
 // Home Page
 Route::get('/', function () {
     $services = Service::active()->ordered()->get();
-    return view('home', compact('services'));
+    $communities = \App\Services\AreasData::getCommunities();
+    $completedJobs = \App\Services\AreasData::getCompletedJobs();
+    $offices = \App\Services\AreasData::getOffices();
+    return view('home', compact('services', 'communities', 'completedJobs', 'offices'));
 })->name('home');
 
 // Services Page (list all services)
@@ -25,6 +28,19 @@ Route::get('/services', function () {
     $services = Service::active()->ordered()->get();
     return view('services', compact('services'));
 })->name('services');
+
+// Packages / Pricing Route (anchors to pricing section)
+Route::get('/packages', function () {
+    return redirect('/services#pricing');
+})->name('packages');
+
+// Areas We Serve Page
+Route::get('/areas-we-serve', function () {
+    $communities = \App\Services\AreasData::getCommunities();
+    $completedJobs = \App\Services\AreasData::getCompletedJobs();
+    $offices = \App\Services\AreasData::getOffices();
+    return view('areas-we-serve', compact('communities', 'completedJobs', 'offices'));
+})->name('areas-we-serve');
 
 // Individual Service Page (by slug)
 Route::get('/service/{slug}', function ($slug) {

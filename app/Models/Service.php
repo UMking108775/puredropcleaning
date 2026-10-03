@@ -39,7 +39,7 @@ class Service extends Model
         if ($this->image) {
             return asset('services%20images/' . $this->image);
         }
-        return asset('services%20images/1.png');
+        return asset('services%20images/deep-cleaning.png');
     }
 
     public static function boot()

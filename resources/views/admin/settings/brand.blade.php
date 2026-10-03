@@ -140,6 +140,18 @@
                     <input type="text" id="social_whatsapp" name="social_whatsapp" value="{{ $data['social_whatsapp'] }}"
                         class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="https://wa.me/...">
                 </div>
+                <div>
+                    <label for="social_youtube" class="block text-sm font-medium text-dark mb-1">YouTube Channel URL</label>
+                    <input type="text" id="social_youtube" name="social_youtube" value="{{ $data['social_youtube'] ?? '' }}"
+                        class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="https://youtube.com/@...">
+                    <p class="text-xs text-gray mt-1">Leave blank to keep hidden until active</p>
+                </div>
+                <div>
+                    <label for="trustindex_widget_id" class="block text-sm font-medium text-dark mb-1">Trustindex Google Reviews Widget ID</label>
+                    <input type="text" id="trustindex_widget_id" name="trustindex_widget_id" value="{{ $data['trustindex_widget_id'] ?? '9208233822d1826b65263bb0dba' }}"
+                        class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="e.g. 9208233822d1826b65263bb0dba">
+                    <p class="text-xs text-gray mt-1">From Trustindex script: <code>loader.js?<strong>ID</strong></code></p>
+                </div>
             </div>
         </div>
 

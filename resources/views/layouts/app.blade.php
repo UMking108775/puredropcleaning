@@ -15,10 +15,10 @@
         <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     @endif
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit (Premium Modern Typography) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
     
     <!-- Heroicons (for icons) -->
     <script src="https://unpkg.com/@heroicons/vue@2.0.18/dist/index.min.js" defer></script>
@@ -27,7 +27,7 @@
     
     @stack('styles')
 </head>
-<body class="bg-light min-h-screen flex flex-col">
+<body class="bg-light min-h-screen flex flex-col pb-20 md:pb-0 antialiased">
     <!-- Header -->
     @include('components.header')
     
@@ -38,6 +38,9 @@
     
     <!-- Footer -->
     @include('components.footer')
+
+    <!-- Mobile Sticky Action Bar -->
+    @include('partials.mobile-action-bar')
     
     @stack('scripts')
     

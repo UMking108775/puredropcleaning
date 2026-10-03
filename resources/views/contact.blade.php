@@ -142,7 +142,7 @@
                         </div>
                         <div>
                             <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-dark mb-0.5 sm:mb-1">Phone</h3>
-                            <a href="tel:{{ \App\Models\Setting::get('brand_phone', '+971 55 101 8837') }}" class="text-primary hover:text-accent transition-colors text-sm sm:text-base">{{ \App\Models\Setting::get('brand_phone', '+971 55 101 8837') }}</a>
+                            <a href="tel:{{ preg_replace('/[^0-9+]/', '', \App\Models\Setting::get('brand_phone', '+971 56 217 0386')) }}" class="text-primary hover:text-accent transition-colors text-sm sm:text-base">{{ \App\Models\Setting::get('brand_phone', '+971 56 217 0386') }}</a>
                         </div>
                     </div>
                     

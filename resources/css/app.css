@@ -29,9 +29,9 @@
     --color-white: #ffffff;
 
     /* Typography */
-    --font-heading: 'Poppins', ui-sans-serif, system-ui, sans-serif;
-    --font-body: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-sans: 'Open Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-heading: 'Outfit', 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
     /* Shadows */
     --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
@@ -60,6 +60,9 @@ body {
     font-family: var(--font-body);
     color: var(--color-dark);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 h1,
@@ -109,6 +112,19 @@ h6 {
 .btn-accent:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px 0 rgba(247, 164, 0, 0.5);
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: var(--color-white);
+    box-shadow: 0 4px 14px 0 rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+    background-color: #20ba5a;
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 0 rgba(37, 211, 102, 0.45);
 }
 
 .btn-outline {

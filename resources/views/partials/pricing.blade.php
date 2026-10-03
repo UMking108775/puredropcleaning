@@ -42,7 +42,7 @@
 
 @if($allPackages->isNotEmpty())
 <!-- Subscription Plans -->
-<section class="py-12 sm:py-16 lg:py-20 bg-white">
+<section id="pricing" class="py-12 sm:py-16 lg:py-20 bg-white scroll-mt-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
