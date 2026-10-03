@@ -1,5 +1,5 @@
 <!-- Areas We Serve & Coverage Map Section -->
-<section id="areas-map-section" class="py-10 sm:py-14 bg-white relative overflow-hidden">
+<section id="areas-map-section" class="py-12 sm:py-16 bg-white relative overflow-hidden">
     
     <!-- Header Container -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8 text-center">
@@ -17,16 +17,18 @@
         </p>
     </div>
 
-    <!-- 100% Full-Width Google My Maps Embed (Edge-to-Edge, Responsive) -->
-    <div class="relative w-full bg-slate-100 overflow-hidden border-y border-slate-200">
-        <iframe 
-            src="https://www.google.com/maps/d/embed?mid=1hL3u5A00ezAMRSp_efStccTTIM0NR9M&ehbc=2E312F&noprof=1" 
-            class="w-full h-[500px] sm:h-[580px] lg:h-[650px] border-0 block" 
-            style="border: 0;"
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+    <!-- Contained Map Container (Not Full Width, No Border Radius) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative w-full bg-slate-100 overflow-hidden border border-slate-300 shadow-sm rounded-none">
+            <iframe 
+                src="https://www.google.com/maps/d/embed?mid=1hL3u5A00ezAMRSp_efStccTTIM0NR9M&ehbc=2E312F&noprof=1" 
+                class="w-full h-[450px] sm:h-[520px] lg:h-[600px] border-0 block rounded-none" 
+                style="border: 0;"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
     </div>
 
 </section>
