@@ -122,8 +122,8 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <div class="font-semibold text-sm text-dark">Executive Bento</div>
-                            <div class="text-xs text-gray">Light luxury bento layout</div>
+                            <div class="font-semibold text-sm text-dark">Minimal Stats & Grid</div>
+                            <div class="text-xs text-gray">Stats row with 2x2 cards</div>
                         </div>
                     </div>
                 </label>
