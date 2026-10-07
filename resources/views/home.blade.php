@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', App\Models\Setting::get('site_title', 'PureDropCleaning - Professional Building Cleaning Services'))
+@section('title', App\Models\Setting::get('site_title', 'Cleaning Services Dubai | Pure Drop Building Cleaning Services LLC'))
+@section('meta_description', 'Professional cleaning services in Dubai by Pure Drop Building Cleaning Services LLC. In-house trained cleaners for deep cleaning, maid services, sofa, carpet and villa cleaning.')
 
 @section('content')
 <!-- Hero Section -->
@@ -32,7 +33,7 @@
 
                 <!-- Subtitle -->
                 <p class="text-sm sm:text-base lg:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-lg font-normal">
-                    {{ App\Models\Setting::get('hero_subtitle', 'Reliable, eco-friendly cleaning services for healthier, brighter spaces.') }}
+                    {{ App\Models\Setting::get('hero_subtitle', 'Reliable, professional cleaning services for healthier, brighter spaces.') }}
                 </p>
 
                 <!-- Action CTA Buttons -->
@@ -54,15 +55,15 @@
                 <div class="flex flex-wrap items-center gap-4 sm:gap-6 mt-8 sm:mt-10 pt-6 border-t border-gray-100 text-xs sm:text-sm text-gray-500 font-medium">
                     <div class="flex items-center gap-1.5">
                         <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                        <span>100% Satisfaction</span>
+                        <span>Customer Focused</span>
                     </div>
                     <div class="flex items-center gap-1.5">
                         <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                        <span>Eco-Friendly</span>
+                        <span>Quality Materials</span>
                     </div>
                     <div class="flex items-center gap-1.5">
                         <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                        <span>Trained Staff</span>
+                        <span>Trained Cleaners</span>
                     </div>
                 </div>
             </div>
@@ -79,6 +80,12 @@
 
 <!-- Services Section -->
 @include('partials.services-grid')
+
+<!-- Real Pure Drop Cleaning Team Section -->
+@include('partials.team-showcase')
+
+<!-- Real Before & After Gallery: See the Pure Drop Difference -->
+@include('partials.before-after-gallery')
 
 <!-- Why Choose Us Section -->
 @include('partials.why-choose-us')

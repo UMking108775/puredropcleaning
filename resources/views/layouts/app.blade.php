@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ App\Models\Setting::get('site_description', 'PureDropCleaning - Professional building cleaning services. We provide top-quality home, kitchen, bathroom, and office cleaning solutions.') }}">
-    <meta name="keywords" content="cleaning services, home cleaning, office cleaning, professional cleaners">
+    <meta name="description" content="@yield('meta_description', App\Models\Setting::get('site_description', 'Pure Drop Building Cleaning Services LLC provides professional residential and commercial cleaning services in Dubai including deep cleaning, maid services, sofa, carpet and villa cleaning.'))">
+    <meta name="keywords" content="Cleaning Services Dubai, Deep Cleaning Dubai, Maid Services Dubai, Villa Deep Cleaning Dubai, Sofa Cleaning Dubai, Carpet Cleaning Dubai">
     
-    <title>@yield('title', \App\Models\Setting::get('brand_name', 'PureDropCleaning') . ' - ' . \App\Models\Setting::get('meta_title_suffix', 'Professional Cleaning Services'))</title>
+    <title>@yield('title', \App\Models\Setting::get('brand_name', 'Pure Drop Building Cleaning Services LLC') . ' | Cleaning Services Dubai')</title>
     
     <!-- Favicon -->
     @if(\App\Models\Setting::get('brand_favicon'))
@@ -76,6 +76,46 @@
                 mobileMenuOverlay.addEventListener('click', closeMenu);
             }
         });
+    </script>
+
+    <!-- Google Ads & Analytics Conversion Tracking Hooks (Checklist Item 16) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        document.addEventListener('click', function(e) {
+            const anchor = e.target.closest('a');
+            if (!anchor) return;
+            const href = anchor.getAttribute('href') || '';
+            
+            if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+                window.dataLayer.push({
+                    'event': 'whatsapp_click',
+                    'conversion_type': 'lead',
+                    'link_url': href
+                });
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'generate_lead', {
+                        'event_category': 'Contact',
+                        'event_label': 'WhatsApp',
+                        'value': 1
+                    });
+                }
+            }
+            
+            if (href.startsWith('tel:')) {
+                window.dataLayer.push({
+                    'event': 'phone_call_click',
+                    'conversion_type': 'lead',
+                    'phone_number': href.replace('tel:', '')
+                });
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'contact', {
+                        'event_category': 'Contact',
+                        'event_label': 'Phone Call',
+                        'value': 1
+                    });
+                }
+            }
+        }, { passive: true });
     </script>
 </body>
 </html>

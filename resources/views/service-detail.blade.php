@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', $service->title . ' - PureDropCleaning')
+@section('title', $service->title . ' Dubai | Pure Drop Building Cleaning Services LLC')
+@section('meta_description', $service->meta_description ?: 'Professional ' . $service->title . ' in Dubai. Book trained cleaners from Pure Drop Building Cleaning Services LLC.')
 
 @section('content')
 <!-- Page Header -->
@@ -33,7 +34,7 @@
                 <!-- Service Image -->
                 <div class="rounded-2xl overflow-hidden mb-6 sm:mb-8 shadow-sm">
                     <img src="{{ $service->image_url }}" 
-                         alt="{{ $service->title }}" 
+                         alt="{{ $service->title }} Dubai - Pure Drop Building Cleaning Services LLC" 
                          class="w-full aspect-video object-cover">
                 </div>
 
@@ -124,7 +125,7 @@
                             <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
-                            {{ \App\Models\Setting::get('brand_hours', '7 Days a Week, 08:00 AM – 08:00 PM') }}
+                            {{ \App\Models\Setting::get('brand_hours', 'Daily 8:00 AM – 7:30 PM') }}
                         </div>
                     </div>
                 </div>

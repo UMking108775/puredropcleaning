@@ -11,6 +11,12 @@
                         <a href="{{ route('home') }}" class="text-gray-light hover:text-accent transition-colors text-xs sm:text-sm">Home</a>
                     </li>
                     <li>
+                        <a href="{{ route('home') }}#our-team-section" class="text-gray-light hover:text-accent transition-colors text-xs sm:text-sm">Our Cleaning Team</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('home') }}#before-after-section" class="text-gray-light hover:text-accent transition-colors text-xs sm:text-sm">Before &amp; After Results</a>
+                    </li>
+                    <li>
                         <a href="{{ route('areas-we-serve') }}" class="text-gray-light hover:text-accent transition-colors text-xs sm:text-sm">Areas We Serve</a>
                     </li>
                     <li>
@@ -72,6 +78,16 @@
                         <a href="mailto:{{ \App\Models\Setting::get('brand_email', 'info.puredropcleaning@gmail.com') }}" class="text-gray-light text-xs sm:text-sm hover:text-accent transition-colors break-all">
                             {{ \App\Models\Setting::get('brand_email', 'info.puredropcleaning@gmail.com') }}
                         </a>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mr-2 sm:mr-3">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="text-gray-light text-xs sm:text-sm">
+                            {{ \App\Models\Setting::get('brand_hours', 'Daily 8:00 AM – 7:30 PM') }}
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -138,7 +154,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
                 <p class="text-gray-light text-xs sm:text-sm text-center sm:text-left">
-                    &copy; {{ date('Y') }} {{ \App\Models\Setting::get('brand_name', 'PureDropCleaning') }}. All rights reserved.
+                    &copy; {{ date('Y') }} {{ \App\Models\Setting::get('brand_name', 'Pure Drop Building Cleaning Services LLC') }}. All rights reserved.
                 </p>
                 <div class="flex items-center flex-wrap gap-x-4 gap-y-1 sm:gap-x-6 text-xs sm:text-sm">
                     <a href="{{ route('page.show', 'privacy-policy') }}" class="text-gray-light hover:text-accent transition-colors">Privacy Policy</a>

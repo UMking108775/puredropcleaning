@@ -2,7 +2,7 @@
     $brandPhone = \App\Models\Setting::get('brand_phone', '+971 56 217 0386');
     $cleanPhone = preg_replace('/[^0-9+]/', '', $brandPhone);
     $waDigits = preg_replace('/[^0-9]/', '', $cleanPhone) ?: '971562170386';
-    $brandHours = \App\Models\Setting::get('brand_hours', '8:00 am to 9:00 pm (Daily)');
+    $brandHours = \App\Models\Setting::get('brand_hours', 'Daily 8:00 AM – 7:30 PM');
     $brandAddress = \App\Models\Setting::get('brand_address', 'Al Jafiliya, Dubai, United Arab Emirates');
     $brandEmail = \App\Models\Setting::get('brand_email', 'info.puredropcleaning@gmail.com');
 @endphp

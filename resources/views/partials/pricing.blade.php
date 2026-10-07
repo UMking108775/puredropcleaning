@@ -144,6 +144,64 @@
             @endif
         @endforeach
 
+        {{-- Quotation-Based & Specialized Services (Checklist Item 8) --}}
+        <div class="mb-10 sm:mb-14">
+            <div class="text-center mb-5 sm:mb-7">
+                <h3 class="text-base sm:text-lg lg:text-2xl font-bold text-dark uppercase tracking-wide">Quotation-Based &amp; Specialized Services</h3>
+                <p class="text-xs sm:text-sm text-gray mt-1">Starting rates based on property size, condition and fabric type.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-5">
+                <!-- Deep Cleaning -->
+                <div class="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 flex flex-col justify-between shadow-2xs">
+                    <div>
+                        <span class="text-[10px] font-bold text-primary uppercase tracking-wider block">Homes &amp; Villas</span>
+                        <h4 class="text-sm sm:text-base font-bold text-slate-900 mt-0.5">Deep Cleaning</h4>
+                        <div class="my-2.5">
+                            <span class="text-[10px] text-slate-500 font-semibold block">Starting From</span>
+                            <span class="text-xl sm:text-2xl font-extrabold text-primary">AED 299</span>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">Quotation-based on property size, bedrooms &amp; condition. Includes all machines and materials.</p>
+                    </div>
+                    <a href="{{ $whatsappBase }}?text={{ urlencode('Hello Pure Drop, I would like to get a quotation for Deep Cleaning.') }}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center justify-center w-full rounded-lg font-bold text-xs py-2 bg-emerald-500 hover:bg-emerald-600 text-white transition-colors">
+                        Get Quote on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Sofa Cleaning -->
+                <div class="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 flex flex-col justify-between shadow-2xs">
+                    <div>
+                        <span class="text-[10px] font-bold text-primary uppercase tracking-wider block">Upholstery Care</span>
+                        <h4 class="text-sm sm:text-base font-bold text-slate-900 mt-0.5">Sofa Cleaning</h4>
+                        <div class="my-2.5">
+                            <span class="text-[10px] text-slate-500 font-semibold block">Starting From</span>
+                            <span class="text-xl sm:text-2xl font-extrabold text-primary">AED 149</span>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">Shampoo and steam extraction per sofa set / seats. Fabric and leather safe.</p>
+                    </div>
+                    <a href="{{ $whatsappBase }}?text={{ urlencode('Hello Pure Drop, I would like to get a quotation for Sofa Cleaning.') }}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center justify-center w-full rounded-lg font-bold text-xs py-2 bg-emerald-500 hover:bg-emerald-600 text-white transition-colors">
+                        Get Quote on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Carpet & Mattress -->
+                <div class="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 flex flex-col justify-between shadow-2xs">
+                    <div>
+                        <span class="text-[10px] font-bold text-primary uppercase tracking-wider block">Steam Detailing</span>
+                        <h4 class="text-sm sm:text-base font-bold text-slate-900 mt-0.5">Carpet &amp; Mattress</h4>
+                        <div class="my-2.5">
+                            <span class="text-[10px] text-slate-500 font-semibold block">Starting From</span>
+                            <span class="text-xl sm:text-2xl font-extrabold text-primary">AED 99</span>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">Deep steam extraction and stain treatment per piece / rug size.</p>
+                    </div>
+                    <a href="{{ $whatsappBase }}?text={{ urlencode('Hello Pure Drop, I would like to get a quotation for Carpet / Mattress Cleaning.') }}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center justify-center w-full rounded-lg font-bold text-xs py-2 bg-emerald-500 hover:bg-emerald-600 text-white transition-colors">
+                        Get Quote on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+
         {{-- Staff badges --}}
         <div class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-4 sm:p-6 lg:p-8 text-white">
             <div class="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-2 sm:gap-4 lg:gap-6">

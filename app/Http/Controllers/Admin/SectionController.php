@@ -17,26 +17,27 @@ class SectionController extends Controller
 
         // Default values
         $defaults = [
+            'wcu_enabled' => '1',
             'wcu_style' => 'style1',
             'wcu_badge' => 'Why Choose Us',
             'wcu_heading' => 'We Make Your Space <span class="text-primary">Shine Bright</span>',
             'wcu_subtitle' => 'With years of experience in the cleaning industry, we understand what it takes to deliver exceptional results.',
-            'wcu_feature1_title' => 'Trusted & Verified Staff',
-            'wcu_feature1_desc' => 'All our cleaners are background-checked and professionally trained.',
-            'wcu_feature2_title' => 'Eco-Friendly Products',
-            'wcu_feature2_desc' => 'We use environmentally safe cleaning solutions that are gentle yet effective.',
+            'wcu_feature1_title' => 'Trained Cleaning Professionals',
+            'wcu_feature1_desc' => 'Directly employed, uniformed and trained staff.',
+            'wcu_feature2_title' => 'Professional Cleaning Materials',
+            'wcu_feature2_desc' => 'Commercial-grade equipment and quality cleaning solutions.',
             'wcu_feature3_title' => 'Flexible Scheduling',
-            'wcu_feature3_desc' => 'Book at your convenience - we work around your schedule.',
-            'wcu_feature4_title' => '100% Satisfaction Guarantee',
-            'wcu_feature4_desc' => "Not happy? We'll re-clean for free. That's our promise.",
-            'wcu_stat1_value' => '10+',
-            'wcu_stat1_label' => 'Years Experience',
-            'wcu_stat2_value' => '5000+',
-            'wcu_stat2_label' => 'Happy Clients',
-            'wcu_stat3_value' => '15+',
-            'wcu_stat3_label' => 'Expert Cleaners',
-            'wcu_stat4_value' => '98%',
-            'wcu_stat4_label' => 'Client Satisfaction',
+            'wcu_feature3_desc' => 'Convenient morning, afternoon and recurring slots across Dubai.',
+            'wcu_feature4_title' => 'Customer Satisfaction Focused',
+            'wcu_feature4_desc' => 'Attentive supervision and thorough inspection upon job completion.',
+            'wcu_stat1_value' => '100%',
+            'wcu_stat1_label' => 'Directly Employed',
+            'wcu_stat2_value' => '7 Days',
+            'wcu_stat2_label' => 'Weekly Availability',
+            'wcu_stat3_value' => '30+',
+            'wcu_stat3_label' => 'Dubai Communities',
+            'wcu_stat4_value' => '5.0★',
+            'wcu_stat4_label' => 'Google Rating',
         ];
 
         // Merge defaults with saved settings
@@ -50,6 +51,8 @@ class SectionController extends Controller
      */
     public function updateWhyChooseUs(Request $request)
     {
+        Setting::set('wcu_enabled', $request->has('wcu_enabled') ? '1' : '0', 'why_choose_us');
+
         $fields = [
             'wcu_style',
             'wcu_badge', 'wcu_heading', 'wcu_subtitle',

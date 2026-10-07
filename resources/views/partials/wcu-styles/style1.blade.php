@@ -8,9 +8,10 @@
                 <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full mb-3 uppercase tracking-wider">
                     {{ $wcu['badge'] }}
                 </span>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0d2d5a] tracking-tight mb-3">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0d2d5a] tracking-tight">
                     {!! $wcu['heading'] !!}
                 </h2>
+                @include('partials.cnc-divider', ['align' => 'left'])
                 <p class="text-slate-500 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
                     {{ $wcu['subtitle'] }}
                 </p>
@@ -47,7 +48,7 @@
                         $s = $statStyles[$index % 4];
                     @endphp
                     <div class="{{ $s['bg'] }} rounded-2xl p-5 sm:p-6 border border-slate-100 flex flex-col justify-center text-center">
-                        <div class="text-3xl sm:text-4xl font-extrabold {{ $s['text'] }} tracking-tight mb-1" data-wcu-counter="{{ $stat['value'] }}">
+                        <div class="text-3xl sm:text-4xl font-extrabold {{ $s['text'] }} tracking-tight mb-1" {!! !str_contains($stat['value'], '★') ? 'data-wcu-counter="' . e($stat['value']) . '"' : '' !!}>
                             {{ $stat['value'] }}
                         </div>
                         <div class="text-xs sm:text-sm font-medium {{ $index === 1 ? 'text-white/80' : 'text-slate-500' }}">

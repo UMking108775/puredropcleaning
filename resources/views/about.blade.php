@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', ($page->title ?? 'About Us') . ' - PureDropCleaning')
+@section('title', 'About Us | Pure Drop Building Cleaning Services LLC Dubai')
+@section('meta_description', 'Learn about Pure Drop Building Cleaning Services LLC - Dubai cleaning company with directly employed, uniformed staff and municipality-compliant standards.')
 
 @php
     $brandName    = \App\Models\Setting::get('brand_name', 'Pure Drop Building Cleaning Services LLC');
@@ -91,20 +92,48 @@
     </div>
 </section>
 
-<!-- Stats -->
-<section class="py-10 sm:py-12 lg:py-16 bg-gradient-to-r from-primary via-primary-dark to-dark">
+<!-- Real Pure Drop Cleaning Team Section -->
+@include('partials.team-showcase')
+
+<!-- Real Results Preview Section -->
+@include('partials.before-after-gallery')
+
+<!-- Trust Pillars (Replaces weak/unverified stats per Checklist Item 1) -->
+<section class="py-10 sm:py-12 lg:py-16 bg-gradient-to-r from-primary via-primary-dark to-dark text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
-            @for($i = 1; $i <= 4; $i++)
             <div>
-                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-1">
-                    {{ App\Models\Setting::get('wcu_stat'.$i.'_value', ['10+', '5000+', '15+', '98%'][$i-1]) }}
+                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-accent mb-1">
+                    100%
                 </div>
-                <div class="text-white/80 text-xs sm:text-sm">
-                    {{ App\Models\Setting::get('wcu_stat'.$i.'_label', ['Years Experience', 'Happy Clients', 'Expert Cleaners', 'Satisfaction Rate'][$i-1]) }}
+                <div class="text-white/90 text-xs sm:text-sm font-semibold">
+                    In-House Uniformed Cleaners
                 </div>
             </div>
-            @endfor
+            <div>
+                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-accent mb-1">
+                    Dubai-Wide
+                </div>
+                <div class="text-white/90 text-xs sm:text-sm font-semibold">
+                    Same-Day &amp; Scheduled Dispatch
+                </div>
+            </div>
+            <div>
+                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-accent mb-1">
+                    Certified
+                </div>
+                <div class="text-white/90 text-xs sm:text-sm font-semibold">
+                    Professional Cleaning Materials
+                </div>
+            </div>
+            <div>
+                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-accent mb-1">
+                    Verified
+                </div>
+                <div class="text-white/90 text-xs sm:text-sm font-semibold">
+                    Google Business Reviews
+                </div>
+            </div>
         </div>
     </div>
 </section>

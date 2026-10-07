@@ -19,6 +19,27 @@
         @csrf
         @method('PUT')
 
+        <!-- Section Visibility Toggle -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-lg font-semibold text-dark flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                        Section Visibility
+                    </h3>
+                    <p class="text-xs text-gray mt-1">Control whether the "Why Choose Us" section appears on the homepage</p>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" name="wcu_enabled" value="1" class="sr-only peer" {{ ($data['wcu_enabled'] ?? '1') == '1' ? 'checked' : '' }}>
+                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                    <span class="ml-3 text-sm font-semibold text-dark select-none">Show Section</span>
+                </label>
+            </div>
+        </div>
+
         <!-- Style Picker -->
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
             <h3 class="text-lg font-semibold text-dark mb-4 flex items-center">

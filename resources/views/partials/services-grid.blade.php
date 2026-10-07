@@ -7,12 +7,10 @@
                 <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
                 <span>Our Services</span>
             </div>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0d2d5a] tracking-tight mb-3 sm:mb-4">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0d2d5a] tracking-tight">
                 Professional <span class="text-primary">Cleaning Solutions</span>
             </h2>
-            <p class="text-gray-500 text-sm sm:text-base leading-relaxed">
-                Tailored residential, commercial, and specialized deep cleaning solutions across Dubai delivered by certified, background-checked staff.
-            </p>
+            @include('partials.cnc-divider')
         </div>
         
         <!-- 4-Column Balanced Grid -->

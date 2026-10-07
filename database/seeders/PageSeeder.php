@@ -20,13 +20,13 @@ class PageSeeder extends Seeder
             [
                 'slug' => 'privacy-policy',
                 'title' => 'Privacy Policy',
-                'meta_description' => 'PureDropCleaning Privacy Policy - Learn how we collect, use, and protect your personal information.',
+                'meta_description' => 'Pure Drop Building Cleaning Services LLC Privacy Policy - Learn how we collect, use, and protect your personal information.',
                 'content' => '
                     <div class="prose max-w-none text-gray-700 space-y-6">
                         <p class="text-sm text-gray-500">Last updated: October 2026</p>
                         
                         <h2 class="text-xl font-bold text-dark mt-6 mb-3">1. Introduction</h2>
-                        <p>Welcome to PureDropCleaning ("we", "our", or "us"). We provide residential and commercial cleaning services across Dubai and the UAE. We are committed to safeguarding your privacy and ensuring your personal information is handled safely and responsibly.</p>
+                        <p>Welcome to Pure Drop Building Cleaning Services LLC ("we", "our", or "us"). We provide residential and commercial cleaning services across Dubai and the UAE. We are committed to safeguarding your privacy and ensuring your personal information is handled safely and responsibly.</p>
 
                         <h2 class="text-xl font-bold text-dark mt-6 mb-3">2. Information We Collect</h2>
                         <p>When you request a quote, book a cleaning appointment, or contact us through our website, phone, or WhatsApp, we may collect:</p>
@@ -61,13 +61,13 @@ class PageSeeder extends Seeder
             [
                 'slug' => 'terms-of-service',
                 'title' => 'Terms and Conditions',
-                'meta_description' => 'PureDropCleaning Terms and Conditions - Service agreements, booking terms, and customer responsibilities.',
+                'meta_description' => 'Pure Drop Building Cleaning Services LLC Terms and Conditions - Service agreements, booking terms, and customer responsibilities.',
                 'content' => '
                     <div class="prose max-w-none text-gray-700 space-y-6">
                         <p class="text-sm text-gray-500">Last updated: October 2026</p>
 
                         <h2 class="text-xl font-bold text-dark mt-6 mb-3">1. Agreement to Terms</h2>
-                        <p>By scheduling a service with PureDropCleaning or using our website, you agree to comply with and be bound by these Terms and Conditions. Please review them carefully before booking.</p>
+                        <p>By scheduling a service with Pure Drop Building Cleaning Services LLC or using our website, you agree to comply with and be bound by these Terms and Conditions. Please review them carefully before booking.</p>
 
                         <h2 class="text-xl font-bold text-dark mt-6 mb-3">2. Service Booking & Access</h2>
                         <ul class="list-disc pl-6 space-y-1">
@@ -79,8 +79,8 @@ class PageSeeder extends Seeder
                         <h2 class="text-xl font-bold text-dark mt-6 mb-3">3. Pricing & Payments</h2>
                         <p>All prices quoted are in UAE Dirhams (AED) and are based on the property specifications and scope of service provided during the booking. Additional charges may apply if the scope of work or property condition significantly exceeds the initial description.</p>
 
-                        <h2 class="text-xl font-bold text-dark mt-6 mb-3">4. Satisfaction Guarantee & Inspections</h2>
-                        <p>We take pride in our work. We recommend that the customer or their representative inspects the premises with our team leader upon job completion. If any agreed area does not meet your expectations, notify our team immediately so we can re-clean that specific area before departure.</p>
+                        <h2 class="text-xl font-bold text-dark mt-6 mb-3">4. Quality Assurance & Inspections</h2>
+                        <p>We take pride in our work. We recommend that the customer or their representative inspects the premises with our team leader upon job completion. If any agreed area does not meet your expectations, notify our team immediately so we can rectify that specific area before departure.</p>
 
                         <h2 class="text-xl font-bold text-dark mt-6 mb-3">5. Governing Law</h2>
                         <p>These terms and conditions are governed by and construed in accordance with the laws of the Emirate of Dubai and the federal laws of the United Arab Emirates.</p>
@@ -93,7 +93,7 @@ class PageSeeder extends Seeder
             [
                 'slug' => 'refund-policy',
                 'title' => 'Refund Policy',
-                'meta_description' => 'PureDropCleaning Refund & Cancellation Policy - Clear guidelines on cancellations, rescheduling, and satisfaction guarantee.',
+                'meta_description' => 'Pure Drop Building Cleaning Services LLC Refund & Cancellation Policy - Clear guidelines on cancellations, rescheduling, and satisfaction guarantee.',
                 'content' => '
                     <div class="prose max-w-none text-gray-700 space-y-6">
                         <p class="text-sm text-gray-500">Last updated: October 2026</p>
@@ -105,8 +105,8 @@ class PageSeeder extends Seeder
                             <li><strong>Short Notice (Under 6 hours):</strong> Cancellations made less than 6 hours prior to the appointment or upon staff arrival at the premises may incur a late cancellation dispatch fee of AED 50 to cover staff transportation costs.</li>
                         </ul>
 
-                        <h2 class="text-xl font-bold text-dark mt-6 mb-3">2. 100% Satisfaction Re-clean Guarantee</h2>
-                        <p>Because cleaning is an on-demand service, direct cash refunds are generally not offered once service is completed. Instead, we provide our <strong>100% Satisfaction Guarantee</strong>: If you are dissatisfied with any area cleaned, please notify us within 24 hours of service completion, and we will send a team to re-clean the specific disputed areas completely free of charge.</p>
+                        <h2 class="text-xl font-bold text-dark mt-6 mb-3">2. Quality Commitment & Follow-up</h2>
+                        <p>Because cleaning is an on-demand service, direct cash refunds are generally not offered once service is completed. Instead, we are committed to customer satisfaction: If you are dissatisfied with any agreed area cleaned, please notify us within 24 hours of service completion, and our team will review and address the specific disputed areas.</p>
 
                         <h2 class="text-xl font-bold text-dark mt-6 mb-3">3. Pre-paid Bookings & Package Refunds</h2>
                         <p>For prepaid package plans (weekly or monthly recurring plans), unused sessions can be paused or transferred to a future date. If you wish to cancel an active multi-session package before completion, refunds will be calculated pro-rata based on standard single-session rates for completed sessions, with the remaining balance returned to your original payment method within 7-14 business days.</p>

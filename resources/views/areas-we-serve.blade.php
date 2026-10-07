@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Areas We Serve in Dubai - PureDropCleaning')
+@section('title', 'Areas We Serve in Dubai | Pure Drop Building Cleaning Services LLC')
 
 @section('content')
 @php
@@ -28,7 +28,7 @@
             Areas We Serve in <span class="text-accent">Dubai</span>
         </h1>
         <p class="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto mb-6 leading-relaxed">
-            Providing top-rated residential and commercial cleaning services across Dubai with prompt dispatch and a 100% satisfaction re-clean guarantee.
+            Professional residential and commercial cleaning services across Dubai communities with trained in-house staff and prompt dispatch.
         </p>
 
         <!-- Breadcrumbs -->
@@ -83,7 +83,7 @@
                 </button>
                 <div class="faq-content hidden px-5 pb-5 pt-0 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-50">
                     <p class="pt-3">
-                        Yes! For all deep cleaning and package bookings, our teams arrive fully equipped with professional industrial vacuums, steam machines, microfiber cloths, ladders, and eco-certified chemicals.
+                        Yes! For all deep cleaning and package bookings, our teams arrive fully equipped with professional industrial vacuums, steam machines, microfiber cloths, ladders, and professional cleaning solutions.
                     </p>
                 </div>
             </div>

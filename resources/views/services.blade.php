@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', App\Models\Setting::get('services_page_title', 'Our Services') . ' - PureDropCleaning')
+@section('title', 'Cleaning Services Dubai | Our Services - Pure Drop LLC')
+@section('meta_description', 'Explore professional cleaning services in Dubai by Pure Drop LLC: Deep Cleaning, Maid Services, Villa Deep Cleaning, Sofa & Carpet Cleaning.')
 
 @section('content')
 <!-- Page Header -->
@@ -79,6 +80,9 @@
         </div>
     </div>
 </section>
+
+<!-- Real Before & After Gallery: See the Pure Drop Difference -->
+@include('partials.before-after-gallery')
 
 <!-- Pricing & Subscription Plans -->
 @include('partials.pricing')

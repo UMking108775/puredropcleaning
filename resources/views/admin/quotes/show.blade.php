@@ -42,18 +42,51 @@
                 <a href="mailto:{{ $quote->email }}" class="text-primary hover:underline">{{ $quote->email }}</a>
             </div>
             <div>
-                <p class="text-sm font-medium text-gray mb-1">Phone</p>
+                <p class="text-sm font-medium text-gray mb-1">Phone / WhatsApp</p>
                 @if($quote->phone)
-                    <a href="tel:{{ $quote->phone }}" class="text-primary hover:underline">{{ $quote->phone }}</a>
+                    <div class="flex items-center gap-3">
+                        <a href="tel:{{ $quote->phone }}" class="text-primary hover:underline font-semibold">{{ $quote->phone }}</a>
+                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $quote->phone) }}" target="_blank" class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold hover:bg-emerald-200">Chat WhatsApp</a>
+                    </div>
                 @else
                     <span class="text-gray">Not provided</span>
                 @endif
             </div>
-            <div class="md:col-span-2">
+            <div>
+                <p class="text-sm font-medium text-gray mb-1">Area / Community</p>
+                <p class="text-dark font-semibold">{{ $quote->area ?? 'Not specified' }}</p>
+            </div>
+            <div>
                 <p class="text-sm font-medium text-gray mb-1">Requested Service</p>
-                <p class="text-dark">{{ $quote->service?->title ?? 'General Inquiry' }}</p>
+                <p class="text-dark font-semibold">{{ $quote->service?->title ?? 'General Inquiry' }}</p>
+            </div>
+            <div>
+                <p class="text-sm font-medium text-gray mb-1">Property Type &amp; Bedrooms</p>
+                <p class="text-dark">{{ $quote->property_type ?? 'N/A' }} &bull; {{ $quote->bedrooms ?? 'N/A' }}</p>
+            </div>
+            <div>
+                <p class="text-sm font-medium text-gray mb-1">Preferred Schedule &amp; Materials</p>
+                <p class="text-dark">{{ $quote->preferred_date ?? 'Flexible' }} ({{ $quote->preferred_time ?? 'Any Time' }}) &bull; {{ $quote->materials ?? 'Standard' }}</p>
+            </div>
+            @if($quote->attachment_path)
+            <div class="md:col-span-2 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <p class="text-sm font-bold text-dark mb-2">Uploaded Property Photo/Video</p>
+                <a href="{{ asset('storage/' . $quote->attachment_path) }}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary-dark">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                    <span>View / Download Attachment</span>
+                </a>
+            </div>
+            @endif
+        </div>
+
+        @if($quote->notes)
+        <div class="mb-6 pb-6 border-b border-gray-100">
+            <p class="text-sm font-medium text-gray mb-2">Special Instructions / Notes</p>
+            <div class="bg-amber-50/60 border border-amber-200 rounded-lg p-4">
+                <p class="text-dark whitespace-pre-wrap">{{ $quote->notes }}</p>
             </div>
         </div>
+        @endif
 
         <div class="mb-6 pb-6 border-b border-gray-100">
             <p class="text-sm font-medium text-gray mb-2">Customer Message</p>

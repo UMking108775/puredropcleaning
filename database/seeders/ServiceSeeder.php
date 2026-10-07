@@ -21,7 +21,7 @@ class ServiceSeeder extends Seeder
                     'Floor scrubbing & mopping',
                     'Dusting of all fixtures',
                     'Hard-to-reach areas',
-                    'Eco-friendly products',
+                    'Professional cleaning materials',
                     'Quality-checked finish',
                 ],
                 'full_content' => '<h3>Professional Deep Cleaning</h3>
@@ -70,111 +70,110 @@ class ServiceSeeder extends Seeder
                 'description' => 'Crystal-clear, streak-free windows inside and out. We clean glass, frames, sills and tracks using professional tools and safe techniques.',
                 'features' => [
                     'Interior glass cleaning',
-                    'Exterior glass cleaning',
+                    'Balcony glass panels',
                     'Frame & sill wiping',
-                    'Track cleaning',
+                    'Track vacuuming & detail',
                     'Streak-free finish',
                     'Hard water stain removal',
-                    'Screen cleaning',
-                    'Safe high-reach equipment',
+                    'High-reach exterior windows (Available on request)',
                 ],
                 'full_content' => '<h3>Crystal Clear Windows</h3>
-<p>Sparkling windows make your space look brighter and more welcoming. Our trained team uses professional squeegees and eco-friendly solutions for a streak-free shine every time.</p>
+<p>Sparkling windows make your space look brighter and more welcoming. Our trained team uses professional squeegees and quality solutions for a streak-free shine every time.</p>
 <h3>Where We Clean</h3>
 <ul>
 <li>Villas, apartments and offices</li>
 <li>Glass doors, sliding panels and partitions</li>
-<li>Balcony and exterior windows</li>
+<li>Balcony glass and accessible exterior windows</li>
+<li>High-reach exterior glass (available on request)</li>
 </ul>',
-                'meta_description' => 'Professional window cleaning in Dubai. Streak-free interior and exterior glass cleaning for villas, apartments and offices.',
+                'meta_description' => 'Professional window cleaning in Dubai. Streak-free interior and balcony glass cleaning for villas, apartments and offices.',
                 'image' => 'window-cleaning.png',
                 'sort_order' => 3,
             ],
             [
                 'title' => 'Carpet Cleaning',
-                'description' => 'Deep carpet cleaning with hot water extraction and steam. We remove stains, dust mites, allergens and odors to restore a fresh, like-new look.',
+                'description' => 'Deep carpet cleaning with hot water extraction and steam. We lift stains, ground-in dirt and odors to restore fresh comfort.',
                 'features' => [
                     'Hot water extraction',
                     'Steam sanitization',
                     'Stain & spot treatment',
                     'Odor neutralization',
-                    'Allergen & dust mite removal',
                     'Fabric-safe solutions',
-                    'Quick drying',
-                    'Pet & child safe',
+                    'Trained cleaning professionals',
+                    'Quick drying process',
                 ],
                 'full_content' => '<h3>Professional Carpet Cleaning</h3>
-<p>Carpets trap dust, allergens, bacteria and odors over time. Our hot water extraction and steam cleaning methods lift dirt from deep in the fibres for a healthier home.</p>
+<p>Carpets collect dust, grime and everyday stains over time. Our hot water extraction and steam methods lift dirt from deep in the fibres for a refreshed, clean home.</p>
 <h3>Why Choose Us</h3>
 <ul>
-<li>Trained technicians with professional equipment</li>
-<li>Pet and child-safe cleaning agents</li>
-<li>Quick drying so you can use rooms the same day</li>
+<li>Trained cleaning professionals with specialized machines</li>
+<li>Professional, fabric-safe cleaning materials</li>
+<li>Quick-drying process for minimum disruption</li>
 </ul>',
-                'meta_description' => 'Professional carpet cleaning in Dubai. Steam cleaning, stain removal and allergen extraction for a healthier home.',
+                'meta_description' => 'Professional carpet cleaning in Dubai. Steam cleaning and stain extraction for a cleaner, fresher home.',
                 'image' => 'carpet-cleaning.png',
                 'sort_order' => 4,
             ],
             [
                 'title' => 'Sofa Cleaning',
-                'description' => 'Bring your sofas back to life. Deep shampoo and steam cleaning that removes stains, dust, and dust mites while preserving fabric quality.',
+                'description' => 'Bring your sofas back to life. Deep shampoo and steam cleaning that treats stains, dust and odors while caring for delicate fabric.',
                 'features' => [
-                    'Fabric & leather safe',
-                    'Stain removal',
-                    'Steam sanitization',
-                    'Dust mite extraction',
+                    'Fabric & leather safe care',
+                    'Targeted stain treatment',
+                    'Shampoo & steam extraction',
                     'Odor elimination',
                     'Cushion deep cleaning',
-                    'Fabric protection',
-                    'Quick drying',
+                    'Trained cleaning professionals',
+                    'Quick drying process',
                 ],
                 'full_content' => '<h3>Deep Sofa Cleaning</h3>
-<p>Daily use leaves your sofa with hidden dust, allergens and stains. Our professional sofa cleaning restores freshness using shampooing and steam extraction safe for all fabric types.</p>',
+<p>Daily use leaves your sofa with surface dust and stubborn spots. Our professional sofa cleaning restores freshness using shampooing and steam extraction suitable for fabric and leather furniture.</p>',
                 'meta_description' => 'Professional sofa cleaning in Dubai. Deep shampoo and steam cleaning for fabric and leather sofas.',
                 'image' => 'sofa-cleaning.png',
                 'sort_order' => 5,
             ],
             [
                 'title' => 'Mattress Cleaning',
-                'description' => 'Hygienic mattress cleaning that eliminates dust mites, bed bugs, sweat, stains and allergens for healthier, more restful sleep.',
+                'description' => 'Hygienic mattress cleaning that removes deep dust, sweat spots and odors for a refreshed, healthier sleep environment.',
                 'features' => [
-                    'Dust mite removal',
+                    'Deep steam sanitization',
                     'Stain & sweat treatment',
-                    'Steam sanitization',
                     'Odor elimination',
-                    'Allergy-friendly',
+                    'Professional cleaning materials',
                     'All mattress sizes',
-                    'Quick drying',
-                    'Safe for kids & pets',
+                    'Trained cleaning professionals',
+                    'Quick drying process',
                 ],
                 'full_content' => '<h3>Healthier Sleep, Cleaner Mattress</h3>
-<p>You spend a third of your life on your mattress. Our professional cleaning eliminates dust mites, allergens, sweat and stains for a healthier sleep environment.</p>',
-                'meta_description' => 'Mattress cleaning in Dubai. Removes dust mites, stains and allergens for healthier sleep.',
+<p>You spend a third of your life on your mattress. Our professional cleaning uses targeted steam extraction to treat stains and odors for a refreshed sleeping surface.</p>',
+                'meta_description' => 'Mattress cleaning in Dubai. Deep steam extraction and stain treatment for healthier sleep.',
                 'image' => 'mattress-cleaning.png',
                 'sort_order' => 6,
             ],
             [
                 'title' => 'Villa Deep Cleaning',
-                'description' => 'Complete deep cleaning for villas of every size. From bedrooms to gardens, we cover every inch with detail and care.',
+                'description' => 'Comprehensive deep cleaning for villas of every size. From living rooms to kitchens and bathrooms, we deliver a spotless finish.',
                 'features' => [
-                    'All rooms & floors',
-                    'Kitchen deep clean',
-                    'Bathroom sanitization',
-                    'Window & balcony cleaning',
-                    'Floor scrubbing & polishing',
-                    'Outdoor areas covered',
-                    'Furniture & upholstery',
-                    'Pre/post-handover ready',
+                    'All bedrooms & living spaces',
+                    'Kitchen deep degreasing',
+                    'Full bathroom sanitization',
+                    'Internal window glass & tracks',
+                    'Floor machine scrubbing',
+                    'Move-in & handover ready',
+                    'Floor polishing (Available on request)',
+                    'Outdoor & patio areas (Available on request)',
+                    'Upholstery shampooing (Available on request)',
                 ],
                 'full_content' => '<h3>Complete Villa Deep Cleaning</h3>
-<p>From living rooms and bedrooms to kitchens, bathrooms, balconies and outdoor areas — our team brings every part of your villa to a sparkling, hygienic finish.</p>
+<p>From living rooms and bedrooms to kitchens, bathrooms and balconies — our team delivers a thorough, sparkling clean throughout your villa.</p>
 <h3>Perfect For</h3>
 <ul>
-<li>Move-in / move-out cleaning</li>
-<li>Post-construction cleaning</li>
-<li>Seasonal refresh</li>
+<li>Move-in / move-out handover</li>
+<li>Post-renovation cleanup</li>
+<li>Seasonal deep refresh</li>
 <li>Pre-event preparation</li>
-</ul>',
+</ul>
+<p class="text-sm text-gray-500"><em>Note: Specialist floor polishing, outdoor patio pressure washing, and upholstery shampooing are optional services available on request.</em></p>',
                 'meta_description' => 'Villa deep cleaning service in Dubai. Complete top-to-bottom cleaning for villas of every size.',
                 'image' => 'villa-deep-cleaning.png',
                 'sort_order' => 7,
@@ -190,7 +189,7 @@ class ServiceSeeder extends Seeder
                     'Window & balcony cleaning',
                     'Cabinet & wardrobe wipe-down',
                     'Move-in / move-out ready',
-                    'Eco-friendly products',
+                    'Professional cleaning materials',
                 ],
                 'full_content' => '<h3>Apartment Deep Cleaning</h3>
 <p>Whether you\'re moving in, moving out, or simply want a thorough refresh, our apartment deep cleaning leaves every room hygienic, fresh and inspection-ready.</p>',

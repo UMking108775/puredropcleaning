@@ -30,7 +30,7 @@ class PackageSeeder extends Seeder
                 'unit_label' => 'per hour',
                 'schedule_visits' => null,
                 'schedule_hours' => null,
-                'features' => ['Professional trained cleaner', 'All cleaning materials included', 'Eco-friendly products used'],
+                'features' => ['Professional trained cleaner', 'All cleaning materials included', 'Professional cleaning materials'],
                 'badge_text' => 'Popular',
                 'is_highlighted' => true,
                 'sort_order' => 2,
@@ -38,7 +38,7 @@ class PackageSeeder extends Seeder
 
             // Weekly
             [
-                'name' => 'Without Material',
+                'name' => 'Without Materials',
                 'type' => 'weekly',
                 'price' => 90,
                 'unit_label' => 'per session / cleaner',
@@ -50,13 +50,13 @@ class PackageSeeder extends Seeder
                 'sort_order' => 1,
             ],
             [
-                'name' => 'With Material',
+                'name' => 'With Materials',
                 'type' => 'weekly',
-                'price' => 90,
+                'price' => 110,
                 'unit_label' => 'per session / cleaner',
                 'schedule_visits' => '3 visits per week',
                 'schedule_hours' => '3 hours each visit',
-                'features' => ['Same trained cleaner each visit', 'All cleaning materials included', 'Eco-friendly products used'],
+                'features' => ['Same trained cleaner each visit', 'All cleaning materials included', 'Professional cleaning materials'],
                 'badge_text' => 'Recommended',
                 'is_highlighted' => true,
                 'sort_order' => 2,
@@ -64,7 +64,7 @@ class PackageSeeder extends Seeder
 
             // Monthly
             [
-                'name' => 'Without Material',
+                'name' => 'Without Materials',
                 'type' => 'monthly',
                 'price' => 1300,
                 'unit_label' => 'per month / cleaner',
@@ -76,13 +76,13 @@ class PackageSeeder extends Seeder
                 'sort_order' => 1,
             ],
             [
-                'name' => 'With Material',
+                'name' => 'With Materials',
                 'type' => 'monthly',
                 'price' => 1600,
                 'unit_label' => 'per month / cleaner',
                 'schedule_visits' => '6 days per week',
                 'schedule_hours' => '2 hours per visit',
-                'features' => ['Dedicated cleaner', 'All cleaning materials included', 'Eco-friendly products used'],
+                'features' => ['Dedicated cleaner', 'All cleaning materials included', 'Professional cleaning materials'],
                 'badge_text' => 'Best Value',
                 'is_highlighted' => true,
                 'sort_order' => 2,

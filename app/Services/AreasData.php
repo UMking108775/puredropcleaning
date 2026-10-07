@@ -12,7 +12,7 @@ class AreasData
         return [
             [
                 'id' => 'nad-al-sheba',
-                'name' => 'Nad Al Sheba 1-4',
+                'name' => 'Nad Al Sheba 1, 2, 3 & 4',
                 'lat' => 25.1432,
                 'lng' => 55.3340,
                 'zone' => 'Central & MBR City',
@@ -142,7 +142,7 @@ class AreasData
             ],
             [
                 'id' => 'arabian-ranches',
-                'name' => 'Arabian Ranches 1-3',
+                'name' => 'Arabian Ranches 1, 2 & 3',
                 'lat' => 25.0558,
                 'lng' => 55.2685,
                 'zone' => 'New Dubai & South',
@@ -157,7 +157,7 @@ class AreasData
                 'lng' => 55.1870,
                 'zone' => 'New Dubai & South',
                 'badge' => 'Apartment Teams',
-                'tagline' => 'IMPZ, Midtown & Lakeside Towers',
+                'tagline' => 'Midtown, Lakeside & Production City Residences',
                 'featured' => false,
             ],
             [
@@ -279,6 +279,46 @@ class AreasData
                 'badge' => 'Waterfront & Greens',
                 'tagline' => 'MBR City Greens, Crest & Forest Villas',
                 'featured' => true,
+            ],
+            [
+                'id' => 'dubai-creek-harbour',
+                'name' => 'Dubai Creek Harbour',
+                'lat' => 25.1950,
+                'lng' => 55.3520,
+                'zone' => 'Central & Creek',
+                'badge' => 'Waterfront Residences',
+                'tagline' => 'Creek Horizon, Harbour Views & Island District',
+                'featured' => true,
+            ],
+            [
+                'id' => 'california-village',
+                'name' => 'California Village',
+                'lat' => 25.0760,
+                'lng' => 55.3370,
+                'zone' => 'Dubailand & Suburbs',
+                'badge' => 'Gated Community',
+                'tagline' => 'California Residences & Townhouses near IMG Worlds',
+                'featured' => false,
+            ],
+            [
+                'id' => 'business-bay',
+                'name' => 'Business Bay',
+                'lat' => 25.1860,
+                'lng' => 55.2740,
+                'zone' => 'Downtown & Central',
+                'badge' => 'High-Rise Apartments',
+                'tagline' => 'Executive Towers, Bay Square & Canal Residences',
+                'featured' => true,
+            ],
+            [
+                'id' => 'damac-lagoons',
+                'name' => 'DAMAC Lagoons',
+                'lat' => 25.0180,
+                'lng' => 55.2420,
+                'zone' => 'New Dubai & South',
+                'badge' => 'Lagoon Community',
+                'tagline' => 'Mediterranean-Inspired Water Villas & Townhouses',
+                'featured' => false,
             ],
         ];
     }
